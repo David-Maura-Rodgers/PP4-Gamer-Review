@@ -11,11 +11,13 @@ class Review(models.Model):
     gamer = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="review_posts"
     )
-    updated_on = models.DateTimeField(auto_now=True)
+    game = models.TextField(default='placeholder')
     content = models.TextField()
+    status = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(
         User, related_name='reviewpost_likes', blank=True)
     funny = models.ManyToManyField(
@@ -59,7 +61,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-    
+
     def number_of_c_likes(self):
         return self.c_likes.count()
 
