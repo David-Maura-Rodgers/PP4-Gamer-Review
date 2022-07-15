@@ -9,14 +9,6 @@ body {
     color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
-}
-
-.thin {
-    font-weight: 300;
-}
-
 .light-bg {
     background-color: #fff;
 }
@@ -46,7 +38,7 @@ body {
     background-color: #23BBBB;
 }
 
-.author {
+.gamer {
     color: white;
     margin: 4px;
     text-transform: uppercase;
