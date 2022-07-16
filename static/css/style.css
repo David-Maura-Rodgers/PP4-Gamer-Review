@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@500&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&display=swap');
+
 body {
+    font-family: Oswald, sans-serif;
     background-color: #F9FAFC;
 }
 
 .brand {
-    font-family: Poppins, sans-serif;
+    font-family: Oswald, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
@@ -14,11 +17,11 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #5590cf;
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #eed2b7;
 }
 
 .card {
@@ -28,6 +31,7 @@ body {
 
 .image-container {
     position: relative;
+    margin: auto 20%;
 }
 
 .image-flash {
@@ -42,6 +46,7 @@ body {
     color: white;
     margin: 4px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .masthead {
@@ -80,12 +85,11 @@ body {
 
 .review-link {
     text-decoration: none;
-    color: #445261;
 }
 
 .review-link:hover,
 .review-link {
-    color: #E84610;
+    color: #3d82b6;
 }
 
 .review-title {
@@ -95,7 +99,7 @@ body {
 
 .review-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: #070f05;
 }
 
 .btn-signup {

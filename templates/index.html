@@ -5,22 +5,22 @@
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Blog Entries Column -->
+        <!-- Review Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for review in review_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card text-center">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in review.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    src="static/images/PP4-Gamer.jpg" alt="game controllers">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ review.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ review.author }}</p>
+                                    <p class="gamer">Gamer: {{ review.gamer }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'review_detail' review.slug  %}" class="review-link">
@@ -28,7 +28,7 @@
                                 <p class="card-text">{{ review.excerpt }}</p>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ review.created_on}} <i class="fa fa-thumbs-up"></i>
+                            <p class="card-text h4">{{ review.created_on}} <i class="fa fa-thumbs-up"></i>
                                 {{ review.number_of_likes }}</p>
                         </div>
                     </div>
