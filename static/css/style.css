@@ -52,27 +52,39 @@ body {
     text-align: center;
 }
 
-.masthead {
+/* .masthead {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
     display: inline-block;
     height: 33vh;
     width: 100%;
-}
+} */
+
+/* https://startbootstrap.com/snippets/full-image-header */
+.masthead {
+    height: 20vh;
+    min-height: 300px;
+    background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
 .masthead-text {
-    background-color: #445261;
-    color: white;
+    color: black;
     position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-family: Oswald, sans-serif;
 }
 
-.masthead-image {
+/* .masthead-image {
     position: relative;
     overflow: hidden;
-}
+} */
 
-.masthead-image:after {
+/* .masthead-image:after {
     content: "";
     position: absolute;
     top: 0;
@@ -84,7 +96,7 @@ body {
     -moz-transform: skew(15deg);
     transform: skew(15deg);
     z-index: 100;
-}
+} */
 
 .review-link {
     text-decoration: none;
