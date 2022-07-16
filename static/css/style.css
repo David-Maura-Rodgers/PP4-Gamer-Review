@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@500&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&display=swap');
 
+/* https://stackoverflow.com/questions/14735274/bootstrap-css-hides-portion-of-container-below-navbar-navbar-fixed-top */
 body {
     font-family: Oswald, sans-serif;
     background-color: #F9FAFC;
+    padding-top: 70px;  
 }
 
 .brand {
@@ -27,6 +29,7 @@ body {
 .card {
     border: none;
     background-color: transparent;
+    padding-bottom: 50px;
 }
 
 .image-container {
