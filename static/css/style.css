@@ -23,6 +23,16 @@ body {
 }
 
 .main-bg {
+    background-color: rgba(198, 198, 198, 0.495);
+}
+
+/* https://www.destructoid.com/reviews/review-stray-adventure-puzzle-game-ps5-version/ */
+.container-fluid-home {
+    width: 75%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
     background-color: #eed2b7;
 }
 
@@ -38,7 +48,7 @@ body {
 }
 
 .image-flash {
-    position: absolute;
+    position: relative;
     bottom: 5%;
     min-width: 30%;
     left: -2px;
