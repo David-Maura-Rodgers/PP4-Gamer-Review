@@ -18,9 +18,14 @@ class ReviewDetail(View):
         queryset = Review.objects.filter(status=1)
         review = get_object_or_404(queryset, slug=slug)
         comments = review.comments.filter(approved=True).order_by("-created_on")
+        
         liked = False
         if review.likes.filter(id=self.request.user.id).exists():
             liked = True
+        
+        funny = False
+        if review.funny.filter(id=self.request.user.id).exists():
+            funny = True
 
         return render(
             request,
@@ -30,6 +35,7 @@ class ReviewDetail(View):
                 "comments": comments,
                 "commented": False,
                 "liked": liked,
+                "funny": funny,
                 "comment_form": CommentForm()
             },
         )
@@ -39,9 +45,14 @@ class ReviewDetail(View):
         queryset = Review.objects.filter(status=1)
         review = get_object_or_404(queryset, slug=slug)
         comments = review.comments.filter(approved=True).order_by("-created_on")
+        
         liked = False
         if review.likes.filter(id=self.request.user.id).exists():
             liked = True
+        
+        funny = False
+        if review.funny.filter(id=self.request.user.id).exists():
+            funny = True
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -61,7 +72,8 @@ class ReviewDetail(View):
                 "comments": comments,
                 "commented": True,
                 "comment_form": comment_form,
-                "liked": liked
+                "liked": liked,
+                "funny": funny,
             },
         )
 
@@ -74,5 +86,17 @@ class ReviewLike(View):
             review.likes.remove(request.user)
         else:
             review.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('review_detail', args=[slug]))
+
+
+class ReviewFunny(View):
+    
+    def post(self, request, slug, *args, **kwargs):
+        review = get_object_or_404(Review, slug=slug)
+        if review.funny.filter(id=request.user.id).exists():
+            review.funny.remove(request.user)
+        else:
+            review.funny.add(request.user)
 
         return HttpResponseRedirect(reverse('review_detail', args=[slug]))

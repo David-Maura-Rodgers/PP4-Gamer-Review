@@ -33,7 +33,6 @@
                     {{ review.content | safe }}
                 </p>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
@@ -56,16 +55,38 @@
 
                             <span class="text-secondary">{{ review.number_of_likes }}</span>
                         </strong>
-                    
                     </div>
+
                     <div class="col-1">
-                        <!-- The number of funny goes before the closing strong tag -->
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'review_like' review.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
+                                    <i class="fas fa-smile-o""></i></button>
+                                {% else %}
+                                <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
+                                    <i class="far fa-smile-o"></i></button>    
+                                {% endif %}
+                            </form>
+
+                            {% else %}
+
+                            <span class="text-secondary"><i class="far fa-smile-o"></i></span>
+
+                            {% endif %}
+
+                            <span class="text-secondary">{{ review.number_of_funny }}</span>
+                        </strong>
                         <strong class="text-secondary"><i class="fa fa-smile-o"></i> {{ review.number_of_funny }} </strong>
                     </div>
+
                     <div class="col-1">
                         <!-- The number of insighful goes before the closing strong tag -->
                         <strong class="text-secondary"><i class="fa fa-lightbulb-o"></i> {{ review.number_of_insightful }} </strong>
                     </div>
+
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>

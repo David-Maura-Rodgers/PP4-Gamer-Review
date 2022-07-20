@@ -49,12 +49,12 @@ class Comment(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    c_likes = models.ManyToManyField(
-        User, related_name='reviewpost_c_likes', blank=True)
-    c_funny = models.ManyToManyField(
-        User, related_name='reviewpost_c_funny', blank=True)
-    c_insightful = models.ManyToManyField(
-        User, related_name='reviewpost_c_insightful', blank=True)
+    # c_likes = models.ManyToManyField(
+    #     User, related_name='reviewpost_c_likes', blank=True)
+    # c_funny = models.ManyToManyField(
+    #     User, related_name='reviewpost_c_funny', blank=True)
+    # c_insightful = models.ManyToManyField(
+    #     User, related_name='reviewpost_c_insightful', blank=True)
 
     class Meta:
         ordering = ["created_on"]
@@ -62,11 +62,11 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
 
-    def number_of_c_likes(self):
-        return self.c_likes.count()
+    # def number_of_c_likes(self):
+    #     return self.c_likes.count()
 
-    def number_of_c_funny(self):
-        return self.c_funny.count()
+    # def number_of_c_funny(self):
+    #     return self.c_funny.count()
 
-    def number_of_c_insightful(self):
-        return self.c_insightful.count()
+    # def number_of_c_insightful(self):
+    #     return self.c_insightful.count()
