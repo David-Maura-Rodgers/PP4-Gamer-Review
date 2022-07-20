@@ -44,15 +44,19 @@ body {
     font-size: 22px;
 }
 
+.card {
+    border: none;
+    background-color: transparent;
+    padding-bottom: 50px;
+}
+
 .card-row {
     height: 200px;
     margin: 1%;
 }
 
-.card {
-    border: none;
-    background-color: transparent;
-    padding-bottom: 50px;
+.card-body {
+    margin-bottom: -20px;
 }
 
 .image-container {
