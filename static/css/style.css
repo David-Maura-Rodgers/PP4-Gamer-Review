@@ -16,9 +16,9 @@ body {
     color: #4A4A4F;
 }
 
-.light-bg {
+/* .light-bg {
     background-color: #fff;
-}
+} */
 
 .dark-bg {
     background-color: #5590cf;
@@ -37,6 +37,11 @@ body {
     margin-left: auto;
     background-color: #eed2b7;
     /* background-color: #f7d399; */
+}
+
+.icons {
+    word-spacing: 5px;
+    font-size: 22px;
 }
 
 .card-row {

@@ -28,10 +28,16 @@
                                 <p class="card-text">{{ review.excerpt }}</p>
                             </a>
                             <hr />
-                            <p class="card-text h5">{{ review.created_on}}   Like: <i class="fa fa-thumbs-up"></i>
-                                {{ review.number_of_likes }}   Funny: <i class="fa fa-smile-o"></i>
-                                {{ review.number_of_funny }}   Insightful: <i class="fa fa-lightbulb-o"></i>
-                                {{ review.number_of_insightful }}</p>
+                            <p class="card-text h5">{{ review.created_on}}
+                                <p class="icons">
+                                Like: <i class="fa fa-thumbs-up"></i>
+                                {{ review.number_of_likes }}   
+                                Funny: <i class="fa fa-smile-o"></i>
+                                {{ review.number_of_funny }}   
+                                Insightful: <i class="fa fa-lightbulb-o"></i>
+                                {{ review.number_of_insightful }}
+                                </p>
+                            </p>
                         </div>
                     </div>
                 </div>
