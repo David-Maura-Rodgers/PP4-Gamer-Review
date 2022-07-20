@@ -18,14 +18,18 @@ class ReviewDetail(View):
         queryset = Review.objects.filter(status=1)
         review = get_object_or_404(queryset, slug=slug)
         comments = review.comments.filter(approved=True).order_by("-created_on")
-        
+       
         liked = False
         if review.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
+    
         funny = False
         if review.funny.filter(id=self.request.user.id).exists():
             funny = True
+
+        insightful = False
+        if review.insightful.filter(id=self.request.user.id).exists():
+            insightful = True
 
         return render(
             request,
@@ -36,6 +40,7 @@ class ReviewDetail(View):
                 "commented": False,
                 "liked": liked,
                 "funny": funny,
+                "insightful": insightful,
                 "comment_form": CommentForm()
             },
         )
@@ -53,6 +58,10 @@ class ReviewDetail(View):
         funny = False
         if review.funny.filter(id=self.request.user.id).exists():
             funny = True
+        
+        insightful = False
+        if review.insightful.filter(id=self.request.user.id).exists():
+            insightful = True
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -74,6 +83,7 @@ class ReviewDetail(View):
                 "comment_form": comment_form,
                 "liked": liked,
                 "funny": funny,
+                "insightful": insightful,
             },
         )
 
@@ -98,5 +108,17 @@ class ReviewFunny(View):
             review.funny.remove(request.user)
         else:
             review.funny.add(request.user)
+
+        return HttpResponseRedirect(reverse('review_detail', args=[slug]))
+
+
+class ReviewInsighful(View):
+  
+    def post(self, request, slug, *args, **kwargs):
+        review = get_object_or_404(Review, slug=slug)
+        if review.insightful.filter(id=request.user.id).exists():
+            review.insightful.remove(request.user)
+        else:
+            review.insightful.add(request.user)
 
         return HttpResponseRedirect(reverse('review_detail', args=[slug]))
