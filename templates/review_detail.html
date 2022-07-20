@@ -35,8 +35,28 @@
                 <div class="row">
 
                     <div class="col-1">
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <strong class="text-secondary"><i class="fa fa-thumbs-up"></i> {{ review.number_of_likes }} </strong>
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'review_like' review.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
+                                    <i class="fas fa-thumbs-up""></i></button>
+                                {% else %}
+                                <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
+                                    <i class="far fa-thumbs-up"></i></button>    
+                                {% endif %}
+                            </form>
+
+                            {% else %}
+
+                            <span class="text-secondary"><i class="far fa-thumbs-up"></i></span>
+
+                            {% endif %}
+
+                            <span class="text-secondary">{{ review.number_of_likes }}</span>
+                        </strong>
+                    
                     </div>
                     <div class="col-1">
                         <!-- The number of funny goes before the closing strong tag -->
