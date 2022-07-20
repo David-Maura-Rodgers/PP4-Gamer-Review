@@ -40,7 +40,7 @@
                                 {% csrf_token %}
                                 {% if liked %}
                                 <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
-                                    <i class="fas fa-thumbs-up""></i></button>
+                                    <i class="fas fa-thumbs-up"></i></button>
                                 {% else %}
                                 <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
                                     <i class="far fa-thumbs-up"></i></button>    
@@ -57,14 +57,15 @@
                         </strong>
                     </div>
 
+
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'review_like' review.slug %}" method="POST">
                                 {% csrf_token %}
-                                {% if liked %}
+                                {% if funny %}
                                 <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
-                                    <i class="fas fa-smile-o""></i></button>
+                                    <i class="fas fa-smile-o"></i></button>
                                 {% else %}
                                 <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
                                     <i class="far fa-smile-o"></i></button>    
@@ -79,13 +80,35 @@
 
                             <span class="text-secondary">{{ review.number_of_funny }}</span>
                         </strong>
-                        <strong class="text-secondary"><i class="fa fa-smile-o"></i> {{ review.number_of_funny }} </strong>
+                        <!-- <strong class="text-secondary"><i class="fa fa-smile-o"></i> {{ review.number_of_funny }} </strong> -->
                     </div>
 
+
                     <div class="col-1">
-                        <!-- The number of insighful goes before the closing strong tag -->
-                        <strong class="text-secondary"><i class="fa fa-lightbulb-o"></i> {{ review.number_of_insightful }} </strong>
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'review_like' review.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if insightful %}
+                                <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
+                                    <i class="fas fa-lightbulb-o"></i></button>
+                                {% else %}
+                                <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
+                                    <i class="far fa-lightbulb-o"></i></button>    
+                                {% endif %}
+                            </form>
+
+                            {% else %}
+
+                            <span class="text-secondary"><i class="far fa-lightbulb-o"></i></span>
+
+                            {% endif %}
+
+                            <span class="text-secondary">{{ review.number_of_insightful }}</span>
+                        </strong>
+                        <!-- <strong class="text-secondary"><i class="fa fa-lightbulb-o"></i> {{ review.number_of_insightful }} </strong> -->
                     </div>
+
 
                     <div class="col-1">
                         {% with comments.count as total_comments %}
