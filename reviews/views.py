@@ -112,7 +112,7 @@ class ReviewFunny(View):
         return HttpResponseRedirect(reverse('review_detail', args=[slug]))
 
 
-class ReviewInsighful(View):
+class ReviewInsightful(View):
   
     def post(self, request, slug, *args, **kwargs):
         review = get_object_or_404(Review, slug=slug)

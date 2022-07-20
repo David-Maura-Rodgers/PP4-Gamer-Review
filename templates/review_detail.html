@@ -65,16 +65,16 @@
                                 {% csrf_token %}
                                 {% if funny %}
                                 <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
-                                    <i class="fas fa-smile-o"></i></button>
+                                    <i class="fa fa-smile-o"></i></button>
                                 {% else %}
                                 <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
-                                    <i class="far fa-smile-o"></i></button>    
+                                    <i class="fa fa-smile-o"></i></button>    
                                 {% endif %}
                             </form>
 
                             {% else %}
 
-                            <span class="text-secondary"><i class="far fa-smile-o"></i></span>
+                            <span class="text-secondary"><i class="fa fa-smile-o"></i></span>
 
                             {% endif %}
 
@@ -87,20 +87,20 @@
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'review_like' review.slug %}" method="POST">
+                            <form class="d-inline" action="{% url 'review_insightful' review.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if insightful %}
                                 <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
-                                    <i class="fas fa-lightbulb-o"></i></button>
+                                    <i class="fa fa-lightbulb-o"></i></button>
                                 {% else %}
                                 <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
-                                    <i class="far fa-lightbulb-o"></i></button>    
+                                    <i class="fa fa-lightbulb-o"></i></button>    
                                 {% endif %}
                             </form>
 
                             {% else %}
 
-                            <span class="text-secondary"><i class="far fa-lightbulb-o"></i></span>
+                            <span class="text-secondary"><i class="fa fa-lightbulb-o"></i></span>
 
                             {% endif %}
 
