@@ -101,7 +101,7 @@ class ReviewLike(View):
 
 
 class ReviewFunny(View):
-    
+ 
     def post(self, request, slug, *args, **kwargs):
         review = get_object_or_404(Review, slug=slug)
         if review.funny.filter(id=request.user.id).exists():
