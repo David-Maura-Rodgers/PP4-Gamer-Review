@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic, View
+from django.views.generic import ListView, View, CreateView
 from django.http import HttpResponseRedirect
-from .models import Review, GamerReview
+from .models import Review
 from .forms import CommentForm, ReviewForm
 
 
-class ReviewList(generic.ListView):
+class ReviewList(ListView):
     model = Review
     queryset = Review.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
@@ -14,9 +14,9 @@ class ReviewList(generic.ListView):
 
 class ReviewDetail(View):
 
-    def get(self, request, slug, *args, **kwargs):
+    def get(self, request, pk, title, *args, **kwargs):
         queryset = Review.objects.filter(status=1)
-        review = get_object_or_404(queryset, slug=slug)
+        review = get_object_or_404(queryset, pk=pk)
         comments = review.comments.filter(approved=True).order_by("-created_on")
        
         liked = False
@@ -45,10 +45,10 @@ class ReviewDetail(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, pk, *args, **kwargs):
 
         queryset = Review.objects.filter(status=1)
-        review = get_object_or_404(queryset, slug=slug)
+        review = get_object_or_404(queryset, pk=pk)
         comments = review.comments.filter(approved=True).order_by("-created_on")
         
         liked = False
@@ -90,81 +90,42 @@ class ReviewDetail(View):
 
 class ReviewLike(View):
     
-    def post(self, request, slug, *args, **kwargs):
-        review = get_object_or_404(Review, slug=slug)
+    def post(self, request, pk, *args, **kwargs):
+        review = get_object_or_404(Review, pk=pk)
         if review.likes.filter(id=request.user.id).exists():
             review.likes.remove(request.user)
         else:
             review.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('review_detail', args=[slug]))
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 class ReviewFunny(View):
  
-    def post(self, request, slug, *args, **kwargs):
-        review = get_object_or_404(Review, slug=slug)
+    def post(self, request, pk, *args, **kwargs):
+        review = get_object_or_404(Review, pk=pk)
         if review.funny.filter(id=request.user.id).exists():
             review.funny.remove(request.user)
         else:
             review.funny.add(request.user)
 
-        return HttpResponseRedirect(reverse('review_detail', args=[slug]))
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 class ReviewInsightful(View):
   
-    def post(self, request, slug, *args, **kwargs):
-        review = get_object_or_404(Review, slug=slug)
+    def post(self, request, pk, *args, **kwargs):
+        review = get_object_or_404(Review, pk=pk)
         if review.insightful.filter(id=request.user.id).exists():
             review.insightful.remove(request.user)
         else:
             review.insightful.add(request.user)
 
-        return HttpResponseRedirect(reverse('review_detail', args=[slug]))
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
-class CreateView(generic.ListView):
-    model = GamerReview
-    queryset = GamerReview.objects
+class CreateView(CreateView):
+    model = Review
+    form_class = ReviewForm
     template_name = 'create.html'
     paginate_by = 6
-
-
-class CreateDetail(View):
-
-    def get(self, request, slug, *args, **kwargs):
-        queryset = GamerReview.objects
-        review = get_object_or_404(queryset, slug=slug)
-       
-        return render(
-            request,
-            "create.html",
-            {
-                "review": review,
-                "review_form": ReviewForm()
-            },
-        )
-
-    def post(self, request, slug, *args, **kwargs):
-
-        queryset = GamerReview.objects
-        review = get_object_or_404(queryset, slug=slug)
-
-        review_form = ReviewForm(data=request.POST)
-        if review_form.is_valid():
-            review_form.instance.email = request.user.email
-            review_form.instance.name = request.user.username
-            review_post = review_form.save(commit=False)
-            review_post.create = review
-            review.save()
-        else:
-            review_form = ReviewForm()
-
-        return render(
-            request,
-            "create.html",
-            {
-                "review": review,
-            },
-        )

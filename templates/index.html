@@ -23,7 +23,7 @@
                                     <p class="gamer">Gamer: {{ review.gamer }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'review_detail' review.slug  %}" class="review-link">
+                            <a href="{% url 'review_detail' review.pk review.title  %}" class="review-link">
                                 <h2 class="card-title">{{ review.title }}</h2>
                                 <p class="card-text">{{ review.excerpt }}</p>
                             </a>

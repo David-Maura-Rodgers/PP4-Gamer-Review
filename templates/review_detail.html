@@ -36,13 +36,13 @@
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'review_like' review.slug %}" method="POST">
+                            <form class="d-inline" action="{% url 'review_like' review.pk %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
+                                <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like">
                                     <i class="fas fa-thumbs-up"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
+                                <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like">
                                     <i class="far fa-thumbs-up"></i></button>    
                                 {% endif %}
                             </form>
@@ -61,13 +61,13 @@
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'review_funny' review.slug %}" method="POST">
+                            <form class="d-inline" action="{% url 'review_funny' review.pk %}" method="POST">
                                 {% csrf_token %}
                                 {% if funny %}
-                                <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
+                                <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like">
                                     <i class="fa fa-smile-o"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
+                                <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like">
                                     <i class="fa fa-smile-o"></i></button>    
                                 {% endif %}
                             </form>
@@ -87,13 +87,13 @@
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'review_insightful' review.slug %}" method="POST">
+                            <form class="d-inline" action="{% url 'review_insightful' review.pk %}" method="POST">
                                 {% csrf_token %}
                                 {% if insightful %}
-                                <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
+                                <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like">
                                     <i class="fa fa-lightbulb-o"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{review.slug}}" class="btn-like">
+                                <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like">
                                     <i class="fa fa-lightbulb-o"></i></button>    
                                 {% endif %}
                             </form>

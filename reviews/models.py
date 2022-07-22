@@ -6,8 +6,8 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Review(models.Model):
-    title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    title = models.CharField(max_length=100)
+    # slug = models.SlugField(max_length=200, unique=True)
     gamer = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="review_posts"
     )
@@ -43,37 +43,6 @@ class Review(models.Model):
 
 class Comment(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE,
-                               related_name="comments")
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
-    body = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
-
-    class Meta:
-        ordering = ["created_on"]
-
-    def __str__(self):
-        return f"Comment {self.body} by {self.name}"
-
-
-class GamerReview(models.Model):
-    title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
-    gamer = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="create_review"
-    )
-    game = models.TextField(default='placeholder')
-    content = models.TextField()
-    featured_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.TextField(blank=True)
-
-    def __str__(self):
-        return self.title
-
-
-class Write(models.Model):
-    review = models.ForeignKey(GamerReview, on_delete=models.CASCADE,
                                related_name="comments")
     name = models.CharField(max_length=80)
     email = models.EmailField()
