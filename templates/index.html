@@ -25,7 +25,7 @@
                             </div>
                             <a href="{% url 'review_detail' review.pk review.title  %}" class="review-link">
                                 <h2 class="card-title">{{ review.title }}</h2>
-                                <p class="card-text">{{ review.excerpt }}</p>
+                                <p class="card-text">{{ review.subtitle }}</p>
                             </a>
                             <hr />
                             <p class="card-text h5">{{ review.created_on}}
@@ -46,7 +46,6 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-
             </div>
         </div>
     </div>
@@ -56,9 +55,9 @@
             {% if page_obj.has_previous %}
             <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
             {% endif %}
+
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
             {% endif %}
         </ul>
     </nav>

@@ -128,4 +128,3 @@ class CreateView(CreateView):
     model = Review
     form_class = ReviewForm
     template_name = 'create.html'
-    paginate_by = 6
