@@ -6,15 +6,15 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Review(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, blank=False)
     gamer = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="review_posts"
-    )
-    game = models.TextField(default='')
+        User, on_delete=models.CASCADE, related_name="review_posts",
+        blank=False)
+    game = models.CharField(max_length=100, blank=False)
+    subtitle = models.CharField(max_length=100, blank=True)
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
-    subtitle = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(
