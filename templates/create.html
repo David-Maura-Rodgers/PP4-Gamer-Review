@@ -7,7 +7,6 @@
         <div class="row h-100 align-items-center">
             <div class="col-md-6 offset-md-3 masthead-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="review-title">Please use the form below to create your own Review</h1>
             </div>
             <div class="d-none d-md-block col-md-6 offset-md-3 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
@@ -21,6 +20,10 @@
     </div>
 </div>
 
+<div>
+    <h1 class="create-title">Please use the form below to create your own Review:</h1>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-4 card mb-4  mt-3 ">
@@ -29,7 +32,7 @@
                 {% if user.is_authenticated %}
 
                 <h3>Post a review:</h3>
-                <p>Posting as: {{ user.username }}</p>
+                <p>Posting as Gamer: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ form | crispy }}
                     {% csrf_token %}

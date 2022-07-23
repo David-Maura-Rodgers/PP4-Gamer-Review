@@ -81,6 +81,11 @@ body {
     text-align: center;
 }
 
+.create-title {
+    margin: 1%;
+    padding-left: 7.5%;
+}
+
 /* .masthead {
     margin-top: 10px;
     overflow: hidden;
