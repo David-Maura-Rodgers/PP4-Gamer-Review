@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, View, CreateView
 from django.http import HttpResponseRedirect
 from .models import Review
@@ -6,6 +6,10 @@ from .forms import CommentForm, ReviewForm
 
 
 class ReviewList(ListView):
+    '''
+    This view will be rendered on the home page in a list view
+    that paginates every 6 entries
+    '''
     model = Review
     queryset = Review.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
@@ -13,16 +17,26 @@ class ReviewList(ListView):
 
 
 class ReviewDetail(View):
+    '''
+    This view will be rendered on the review detail page:
+    User can see the content of posted reviews
+    '''
 
     def get(self, request, pk, title, *args, **kwargs):
+        '''
+        User will be able to vote like, funny and insightful
+        User can also see comments that have been made on the review
+        '''
+
         queryset = Review.objects.filter(status=1)
         review = get_object_or_404(queryset, pk=pk)
-        comments = review.comments.filter(approved=True).order_by("-created_on")
-       
+        comments = review.comments.filter(approved=True).order_by(
+            "-created_on")
+
         liked = False
         if review.likes.filter(id=self.request.user.id).exists():
             liked = True
-    
+
         funny = False
         if review.funny.filter(id=self.request.user.id).exists():
             funny = True
@@ -46,19 +60,24 @@ class ReviewDetail(View):
         )
 
     def post(self, request, pk, *args, **kwargs):
+        '''
+        User can also comment on the selected review
+        This is posted to admin to be authorised bt admin
+        '''
 
         queryset = Review.objects.filter(status=1)
         review = get_object_or_404(queryset, pk=pk)
-        comments = review.comments.filter(approved=True).order_by("-created_on")
-        
+        comments = review.comments.filter(
+            approved=True).order_by("-created_on")
+
         liked = False
         if review.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
+
         funny = False
         if review.funny.filter(id=self.request.user.id).exists():
             funny = True
-        
+
         insightful = False
         if review.insightful.filter(id=self.request.user.id).exists():
             insightful = True
@@ -89,8 +108,16 @@ class ReviewDetail(View):
 
 
 class ReviewLike(View):
-    
+    '''
+    User can like a review and an icon changes to reflect that
+    '''
+
     def post(self, request, pk, *args, **kwargs):
+        '''
+        User can like a review and an icon changes to reflect that
+        But only if they are logged in as a registered user
+        '''
+
         review = get_object_or_404(Review, pk=pk)
         if review.likes.filter(id=request.user.id).exists():
             review.likes.remove(request.user)
@@ -101,8 +128,16 @@ class ReviewLike(View):
 
 
 class ReviewFunny(View):
- 
+    '''
+    User can vote funny on a review and an icon changes to reflect that
+    '''
+
     def post(self, request, pk, *args, **kwargs):
+        '''
+        User can vote funny a review and an icon changes to reflect that
+        But only if they are logged in as a registered user
+        '''
+
         review = get_object_or_404(Review, pk=pk)
         if review.funny.filter(id=request.user.id).exists():
             review.funny.remove(request.user)
@@ -113,8 +148,16 @@ class ReviewFunny(View):
 
 
 class ReviewInsightful(View):
-  
+    '''
+    User can vote insightful on a review and an icon changes to reflect that
+    '''
+
     def post(self, request, pk, *args, **kwargs):
+        '''
+        User can vote insightful a review and an icon changes to reflect that
+        But only if they are logged in as a registered user
+        '''
+
         review = get_object_or_404(Review, pk=pk)
         if review.insightful.filter(id=request.user.id).exists():
             review.insightful.remove(request.user)
@@ -124,7 +167,12 @@ class ReviewInsightful(View):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
-class ReviewView(CreateView):
+class ReviewPost(CreateView):
+    '''
+    This renders the Create A Review page
+    User can post a review of their own
+    '''
+
     model = Review
     form_class = ReviewForm
     template_name = 'create.html'
