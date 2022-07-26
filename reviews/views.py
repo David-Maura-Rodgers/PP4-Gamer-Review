@@ -124,7 +124,7 @@ class ReviewInsightful(View):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
-class CreateView(CreateView):
+class ReviewView(CreateView):
     model = Review
     form_class = ReviewForm
     template_name = 'create.html'
