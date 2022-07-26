@@ -32,10 +32,12 @@
                 {% if user.is_authenticated %}
 
                 <h3>Post a review:</h3>
+                <hr>
                 <p>Posting as Gamer: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ form | crispy }}
                     {% csrf_token %}
+                    <hr>
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 
