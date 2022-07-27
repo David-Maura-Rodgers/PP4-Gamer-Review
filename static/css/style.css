@@ -36,16 +36,18 @@ h2 {
     margin: 0;
     /* background-color: #a3b3e3; */
     background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
+    background-image: url('https://media.istockphoto.com/vectors/glowing-neon-reflex-on-a-womans-face-with-virtual-glasses-vector-id1077523284?k=20&m=1077523284&s=612x612&w=0&h=JQ0RXSSOUkPOkBKH1FlaX7pKNfSHDymD-AFiaVeGrMY=');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: black;
+    color: white;
 }
 
 .welcome-p {
     position: relative;
     left:0;
     top: 0;
+    color: white;
 }
 
 .icons {
