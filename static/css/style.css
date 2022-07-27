@@ -13,13 +13,6 @@ h2 {
     text-align: inherit;
 }
 
-.brand {
-    font-family: Oswald, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
-}
-
 .dark-bg {
     background-color: #5590cf;
 }
@@ -31,12 +24,16 @@ h2 {
 /* https://www.destructoid.com/reviews/review-stray-adventure-puzzle-game-ps5-version/ */
 .container-fluid-home {
     width: 72%;
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
     background-color: #eed2b7;
     /* background-color: #f7d399; */
+}
+
+.welcome {
+    padding: 2%;
+    text-align: center;
+    background-color: #8ba1e2;
 }
 
 .icons {
@@ -69,7 +66,8 @@ h2 {
 
 .card-title-black {
     background-color: rgba(138, 181, 241, 0.595);
-    color: #4A4A4F;
+    /* color: #4A4A4F; */
+    color: black;
     padding: 4px;
 }
 

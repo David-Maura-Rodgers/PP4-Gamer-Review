@@ -169,7 +169,7 @@ class ReviewInsightful(View):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
-class ReviewPost(CreateView):
+class ReviewPost(LoginRequiredMixin, CreateView):
     '''
     This renders the Create A Review page
     User can post a review of their own
@@ -178,3 +178,4 @@ class ReviewPost(CreateView):
     model = Review
     form_class = ReviewForm
     template_name = 'create.html'
+    success_url = "posted_review.html"
