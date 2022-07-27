@@ -26,7 +26,7 @@
                             <a href="{% url 'review_detail' review.pk review.title  %}" class="review-link">
                                 <h2 class="card-title">{{ review.title }}</h2>
                                 <h2 class="card-title-black">{{ review.game }}</h2>
-                                <p class="card-text">{{ review.subtitle }}</p>
+                                <p class="subtitle-text">{{ review.subtitle }}</p>
                             </a>
                             <hr />
                             <p class="card-text h5">{{ review.created_on}}

@@ -57,10 +57,13 @@ h2 {
 
 .card-body {
     padding: 5px;
-    font-size: 20px;
 }
 
-.card-text {
+.subtitle-text {
+    font-size: 22px;
+}
+
+.create-text {
     font-size: 22px;
 }
 
