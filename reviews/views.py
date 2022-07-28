@@ -5,6 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin  
 from django.http import HttpResponseRedirect
 from .models import Review
 from .forms import CommentForm, ReviewForm
+# from django.urls import reverse
 
 
 class ReviewList(ListView):
@@ -179,3 +180,12 @@ class CreateReview(LoginRequiredMixin, CreateView):
     form_class = ReviewForm
     template_name = 'create_review.html'
     success_url = "posted_review.html"
+    success_message = "You successfully created your own Review"
+
+    def form_valid(self, form):
+        form.instance.gamer = self.request.user
+        form.save()
+        form.instance.members.set([self.request.user.pk])
+        self.success_url = "/posted_review/"
+
+        return super().form_valid(form)
