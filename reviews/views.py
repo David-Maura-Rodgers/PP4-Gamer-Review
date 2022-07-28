@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 # from datetime import timedelta, date
 from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView  # noqa
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin  # noqa
 from django.http import HttpResponseRedirect
 from .models import Review
 from .forms import CommentForm, ReviewForm
@@ -169,7 +169,7 @@ class ReviewInsightful(View):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
-class ReviewPost(LoginRequiredMixin, CreateView):
+class CreateReview(LoginRequiredMixin, CreateView):
     '''
     This renders the Create A Review page
     User can post a review of their own
