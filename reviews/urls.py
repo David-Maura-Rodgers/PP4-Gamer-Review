@@ -19,5 +19,5 @@ urlpatterns = [
         name='review_funny'),
     path(
         'insightful/<slug:pk>', views.ReviewInsightful.as_view(),
-         name='review_insightful'),
+        name='review_insightful'),
 ]
