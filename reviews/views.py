@@ -177,5 +177,5 @@ class CreateReview(LoginRequiredMixin, CreateView):
 
     model = Review
     form_class = ReviewForm
-    template_name = 'create.html'
+    template_name = 'create_review.html'
     success_url = "posted_review.html"
