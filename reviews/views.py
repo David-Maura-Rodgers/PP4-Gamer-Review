@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 # from datetime import timedelta, date
 from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView  # noqa
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin  # noqa
@@ -15,7 +15,7 @@ class ReviewList(ListView):
     '''
     model = Review
     queryset = Review.objects.filter(status=1).order_by('-created_on')
-    template_name = 'index.html'
+    template_name = "index.html"
     paginate_by = 6
 
 
@@ -179,13 +179,21 @@ class CreateReview(LoginRequiredMixin, CreateView):
     model = Review
     form_class = ReviewForm
     template_name = 'create_review.html'
+    context_object_name = "posted_review"
     success_url = "posted_review.html"
-    success_message = "You successfully created your own Review"
 
     def form_valid(self, form):
         form.instance.gamer = self.request.user
         form.save()
-        form.instance.members.set([self.request.user.pk])
-        self.success_url = "/posted_review/"
+        # form.instance.review.set([self.request.user.pk])
+        self.success_url = "/"
 
         return super().form_valid(form)
+
+
+class PostedReview(View):
+    '''
+    This renders the Posted Review page
+    User is redirected to page success page
+    '''
+    template_name = "posted_review.html"

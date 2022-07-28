@@ -8,7 +8,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Review(models.Model):
     title = models.CharField(max_length=100, blank=False)
     gamer = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="review_posts",
+        User, on_delete=models.CASCADE,
         blank=False)
     game = models.CharField(max_length=100, blank=False)
     subtitle = models.CharField(max_length=100, blank=True)
