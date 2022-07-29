@@ -12,6 +12,9 @@ urlpatterns = [
         'posted_review/', views.PostedReview.as_view(),
         name='posted_review'),
     path(
+        'edit_review/<slug:pk>/', views.EditReview.as_view(),
+        name='edit_review'),
+    path(
         '<slug:pk>/<str:title>/', views.ReviewDetail.as_view(),
         name='review_detail'),
     path(
