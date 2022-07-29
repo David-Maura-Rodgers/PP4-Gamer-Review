@@ -25,7 +25,7 @@
 
             {% if user.is_authenticated %}
 
-            <h2 class="posted-h2">Well done! Your review has been sent for authorisation by our Admin</h2>
+            <h2 class="posted-h2">Please select which of your reviews you'd like to edit</h2>
             <hr>
             <div class="row">
             <button class= "btn-home btn-lg" type="submit" action="{% url 'home' %}">Back to Home</button>
@@ -38,21 +38,9 @@
                     <div class="col-md-6 offset-md-3">
                         <div class="card text-center">
                             <div class="card-body">
-                                <div class="image-container">
-
-                                    {% if "placeholder" in review.featured_image.url %}
-
-                                    <img class="card-img-top"
-                                        src="static/images/PP4-Gamer.jpg" alt="game controllers">
-
-                                    {% else %}
-
-                                    <img class="card-img-top" src=" {{ review.featured_image.url }}">
-
-                                    {% endif %}
-                                    <div class="image-flash">
-                                        <p class="gamer">Gamer: {{ review.gamer }}</p>
-                                    </div>
+        
+                                <div class="image-flash">
+                                    <p class="gamer">Gamer: {{ review.gamer }}</p>
                                 </div>
                                 
                                 <a href="{% url 'review_detail' review.pk review.title  %}" class="review-link">
@@ -61,7 +49,6 @@
                                     <p class="subtitle-text">{{ review.subtitle }}</p>
                                 </a>
                                 <hr>
-                                
                                 <p class="card-text h5">{{ review.created_on}}
                                     <p class="icons">
                                     Like: <i class="fa fa-thumbs-up"></i>

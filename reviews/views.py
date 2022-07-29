@@ -57,6 +57,34 @@ class CreateReview(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
+class EditReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    '''
+    -------------
+    '''
+
+    model = Review
+    form_class = ReviewForm
+    template_name = 'edit_review.html'
+    context_object_name = "edit_review"
+    success_url = "posted_review.html"
+
+    def form_valid(self, form):
+        '''
+        Blank
+        '''
+        form.instance.gamer = self.request.user
+        title = form.cleaned_data['']
+        game = form.cleaned_data['']
+        subtitle = form.cleaned_data['']
+        content = form.cleaned_data['']
+        
+        form.save()
+        # form.instance.review.set([self.request.user.pk])
+        self.success_url = "/posted_review/"
+
+        return super().form_valid(form)
+
+
 class ReviewDetail(View):
     '''
     This view will be rendered on the review detail page:
