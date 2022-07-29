@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from datetime import timedelta, date
-from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView  # noqa
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin  # noqa
+from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponseRedirect
 from .models import Review
 from .forms import CommentForm, ReviewForm
@@ -16,6 +16,18 @@ class ReviewList(ListView):
     model = Review
     queryset = Review.objects.filter(status=1).order_by('-created_on')
     template_name = "index.html"
+    paginate_by = 6
+
+
+class PostedReview(View):
+    '''
+    This renders the Posted Review page
+    User is redirected to page success page
+    '''
+
+    model = Review
+    queryset = Review.objects.filter(status=1).order_by('-created_on')
+    template_name = "posted_review.html"
     paginate_by = 6
 
 
@@ -189,12 +201,3 @@ class CreateReview(LoginRequiredMixin, CreateView):
         self.success_url = "/"
 
         return super().form_valid(form)
-
-
-class PostedReview(View):
-    '''
-    This renders the Posted Review page
-    User is redirected to page success page
-    '''
-
-    template_name = "posted_review.html"
