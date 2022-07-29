@@ -84,6 +84,13 @@ class EditReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
         return super().form_valid(form)
 
+        def test_func(self):
+            """ Test user is staff or throw 403 """
+            if self.request.user.is_gamer:
+                return True
+            else:
+                return self.request.user == self.get_object().gamer
+
 
 class ReviewDetail(View):
     '''

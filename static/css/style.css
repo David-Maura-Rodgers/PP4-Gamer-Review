@@ -22,16 +22,20 @@ h2 {
 }
 
 .main-bg {
-    background-color: rgba(138, 181, 241, 0.595);
+    /* background-color: rgba(138, 181, 241, 0.595); */
+    background-color: #eed2b7;
 }
 
 /* https://www.destructoid.com/reviews/review-stray-adventure-puzzle-game-ps5-version/ */
 .container-fluid-home {
     width: 72%;
+    padding: 1%;
     margin-right: auto;
     margin-left: auto;
-    background-color: #eed2b7;
+    /* background-color: #5590cf; */
+    background-color: rgba(138, 181, 241, 0.595);
     /* background-color: #f7d399; */
+    border-radius: 25px;
 }
 
 .welcome {
@@ -39,7 +43,7 @@ h2 {
     text-align: center;
     margin: 0;
     /* background-color: #a3b3e3; */
-    background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
+    /* background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'); */
     background-image: url('https://media.istockphoto.com/vectors/glowing-neon-reflex-on-a-womans-face-with-virtual-glasses-vector-id1077523284?k=20&m=1077523284&s=612x612&w=0&h=JQ0RXSSOUkPOkBKH1FlaX7pKNfSHDymD-AFiaVeGrMY=');
     background-size: cover;
     background-position: center;
@@ -72,6 +76,7 @@ h2 {
 
 .card-body {
     padding: 5px;
+    border-radius: 25px;
 }
 
 .subtitle-text {
@@ -82,11 +87,22 @@ h2 {
     font-size: 22px;
 }
 
+.create-title {
+    margin: 1%;
+    text-align: center;
+}
+
 .card-title-black {
-    background-color: rgba(138, 181, 241, 0.595);
+    /* background-color: rgba(138, 181, 241, 0.595); */
+    /* background-color: #047575; */
+    background: linear-gradient(rgba(220, 225, 230, 0.527), transparent),
+                linear-gradient(to top left, rgb(230, 195, 125), transparent),
+                linear-gradient(to top right, rgb(133, 70, 11), transparent);
+    background-blend-mode: screen;
     /* color: #4A4A4F; */
     color: black;
     padding: 4px;
+    border-radius: 25px;
 }
 
 .review-text {
@@ -112,11 +128,6 @@ h2 {
     margin: 4px;
     text-transform: uppercase;
     text-align: center;
-}
-
-.create-title {
-    margin: 1%;
-    padding-left: 6.65%;
 }
 
 /* https://startbootstrap.com/snippets/full-image-header */
