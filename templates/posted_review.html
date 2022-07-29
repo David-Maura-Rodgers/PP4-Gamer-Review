@@ -1,12 +1,88 @@
 {% extends "base.html" %} {% block content %}
 
+<!-- https://startbootstrap.com/snippets/full-image-header -->
+<div class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-md-6 offset-md-3 masthead-text">
+                <!-- Post title goes in these h1 tags -->
+            </div>
+            <div class="d-none d-md-block col-md-6 offset-md-3 masthead-image">
+                <!-- The featured image URL goes in the src attribute -->
+                {% if "placeholder" in review.featured_image.url %}
+                <!-- <img class="review-image" src="static/images/PP4-Gamer-Review-Detail.jpg" alt="game controllers" width="100%"> -->
+                {% else %}
+                <img src=" {{ review.featured_image.url }}" width="100%">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
+
+            {% if user.is_authenticated %}
+
             <h2>Well done! Your review has been posted</h2>
             <hr>
-            <!-- <button class="btn" type="submit" action="{% url 'index' %}">Home</button> -->
+            <div class="col-12 mt-0 left">
+                <div class="row">
+
+                    {% for review in review_list %}
+
+                    <div class="col-md-6 offset-md-3">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <div class="image-container">
+
+                                    {% if "placeholder" in review.featured_image.url %}
+
+                                    <img class="card-img-top"
+                                        src="static/images/PP4-Gamer.jpg" alt="game controllers">
+
+                                    {% else %}
+
+                                    <img class="card-img-top" src=" {{ review.featured_image.url }}">
+
+                                    {% endif %}
+                                    <div class="image-flash">
+                                        <p class="gamer">Gamer: {{ review.gamer }}</p>
+                                    </div>
+                                </div>
+                                
+                                <a href="{% url 'review_detail' review.pk review.title  %}" class="review-link">
+                                    <h2 class="card-title">{{ review.title }}</h2>
+                                    <h2 class="card-title-black">{{ review.game }}</h2>
+                                    <p class="subtitle-text">{{ review.subtitle }}</p>
+                                </a>
+                                <hr/>
+                                
+                                <p class="card-text h5">{{ review.created_on}}
+                                    <p class="icons">
+                                    Like: <i class="fa fa-thumbs-up"></i>
+                                    {{ review.number_of_likes }}   
+                                    Funny: <i class="fa fa-smile-o"></i>
+                                    {{ review.number_of_funny }}   
+                                    Insightful: <i class="fa fa-lightbulb-o"></i>
+                                    {{ review.number_of_insightful }}
+                                    </p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            <button class="btn" type="submit" action="{% url 'home' %}">Home</button>
         </div>
+
+            {% endif %}
+
     </div>
 </div>
 

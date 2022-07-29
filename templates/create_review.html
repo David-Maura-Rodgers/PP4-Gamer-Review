@@ -29,6 +29,7 @@
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 <div class="create-text">
+
                     {% if user.is_authenticated %}
 
                     <h3>Post a review:</h3>
@@ -40,7 +41,8 @@
                         <hr>
                         <button type="submit" class="btn btn-signup btn-lg">Submit Review</button>
                     </form>
-                </div>    
+                </div> 
+                   
                     {% endif %}
 
             </div>

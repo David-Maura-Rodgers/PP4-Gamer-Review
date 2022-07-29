@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse
-# from datetime import timedelta, date
+from datetime import timedelta, date
 from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView  # noqa
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin  # noqa
 from django.http import HttpResponseRedirect
 from .models import Review
 from .forms import CommentForm, ReviewForm
-# from django.urls import reverse
+from django.urls import reverse
 
 
 class ReviewList(ListView):
@@ -196,4 +196,5 @@ class PostedReview(View):
     This renders the Posted Review page
     User is redirected to page success page
     '''
+
     template_name = "posted_review.html"
