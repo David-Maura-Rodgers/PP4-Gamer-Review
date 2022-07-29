@@ -25,11 +25,15 @@
                     <div class="card text-center">
                         <div class="card-body">
                             <div class="image-container">
+
                                 {% if "placeholder" in review.featured_image.url %}
+
                                 <img class="card-img-top"
                                     src="static/images/PP4-Gamer.jpg" alt="game controllers">
+
                                 {% else %}
                                 <img class="card-img-top" src=" {{ review.featured_image.url }}">
+                                
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="gamer">Gamer: {{ review.gamer }}</p>

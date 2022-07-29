@@ -13,6 +13,10 @@ h2 {
     text-align: inherit;
 }
 
+.posted-h2 {
+    text-align: center;
+}
+
 .dark-bg {
     background-color: #5590cf;
 }
@@ -149,14 +153,24 @@ h2 {
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #047575;
     color: #fff;
 }
 
 .btn-signup:hover,
-.btn-signup:active {
+.btn-signup:active,
+.btn-home:hover,
+.btn-home:active {
     background-color: #fff;
     color: #23BBBB;
+}
+
+.btn-home {
+    background-color: #047575;
+    color: #fff;
+    position: relative;
+    width: 50%;
+    margin-left: 25%;
 }
 
 .link {

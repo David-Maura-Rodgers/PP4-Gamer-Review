@@ -22,7 +22,7 @@ class ReviewList(ListView):
 class PostedReview(LoginRequiredMixin, ListView):
     '''
     This renders the Posted Review page
-    User is redirected to page success page
+    User can view all posts they have made
     '''
 
     model = Review
@@ -30,6 +30,31 @@ class PostedReview(LoginRequiredMixin, ListView):
         '-created_on')
     template_name = "posted_review.html"
     paginate_by = 6
+
+
+class CreateReview(LoginRequiredMixin, CreateView):
+    '''
+    This renders the Create A Review page
+    User can post a review of their own
+    '''
+
+    model = Review
+    form_class = ReviewForm
+    template_name = 'create_review.html'
+    context_object_name = "posted_review"
+    success_url = "posted_review.html"
+
+    def form_valid(self, form):
+        '''
+        Blank
+        '''
+
+        form.instance.gamer = self.request.user
+        form.save()
+        # form.instance.review.set([self.request.user.pk])
+        self.success_url = "/posted_review/"
+
+        return super().form_valid(form)
 
 
 class ReviewDetail(View):
@@ -181,28 +206,3 @@ class ReviewInsightful(View):
             review.insightful.add(request.user)
 
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-
-class CreateReview(LoginRequiredMixin, CreateView):
-    '''
-    This renders the Create A Review page
-    User can post a review of their own
-    '''
-
-    model = Review
-    form_class = ReviewForm
-    template_name = 'create_review.html'
-    context_object_name = "posted_review"
-    success_url = "posted_review.html"
-
-    def form_valid(self, form):
-        '''
-        Blank
-        '''
-        
-        form.instance.gamer = self.request.user
-        form.save()
-        # form.instance.review.set([self.request.user.pk])
-        self.success_url = "/"
-
-        return super().form_valid(form)
