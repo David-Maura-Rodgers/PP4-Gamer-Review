@@ -19,14 +19,15 @@ class ReviewList(ListView):
     paginate_by = 6
 
 
-class PostedReview(View):
+class PostedReview(LoginRequiredMixin, ListView):
     '''
     This renders the Posted Review page
     User is redirected to page success page
     '''
 
     model = Review
-    queryset = Review.objects.filter(status=1).order_by('-created_on')
+    queryset = Review.objects.filter(status=1).order_by(
+        '-created_on')
     template_name = "posted_review.html"
     paginate_by = 6
 
@@ -195,6 +196,10 @@ class CreateReview(LoginRequiredMixin, CreateView):
     success_url = "posted_review.html"
 
     def form_valid(self, form):
+        '''
+        Blank
+        '''
+        
         form.instance.gamer = self.request.user
         form.save()
         # form.instance.review.set([self.request.user.pk])
