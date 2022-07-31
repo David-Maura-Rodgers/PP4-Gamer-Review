@@ -6,6 +6,9 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Review(models.Model):
+    '''
+    Model for user to create Game Reviews
+    '''
     title = models.CharField(max_length=100, blank=False)
     gamer = models.ForeignKey(
         User, on_delete=models.CASCADE,
@@ -25,22 +28,43 @@ class Review(models.Model):
         User, related_name='reviewpost_insightful', blank=True)
 
     class Meta:
+        '''
+        Order review posts by dates they are created on
+        '''
         ordering = ["-created_on"]
 
     def __str__(self):
         return self.title
 
     def number_of_likes(self):
+        '''
+        Function: increases the number of likes count by one
+        if user clicks on like icon in review detail page
+        Also returns total number of likes
+        '''
         return self.likes.count()
 
     def number_of_funny(self):
+        '''
+        Function: increases the number of funnny count by one
+        if user clicks on like icon in review detail page
+        Also returns total number of funny votes
+        '''
         return self.funny.count()
 
     def number_of_insightful(self):
+        '''
+        Function: increases the number of insightful count by one
+        if user clicks on like icon in review detail page
+        Also returns total number of insightful votes
+        '''
         return self.insightful.count()
 
 
 class Comment(models.Model):
+    '''
+    Model for user to create comments for other Game Reviews
+    '''
     review = models.ForeignKey(Review, on_delete=models.CASCADE,
                                related_name="comments")
     name = models.CharField(max_length=80)
@@ -50,6 +74,9 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
+        '''
+        Order review posts by dates they are created on
+        '''
         ordering = ["created_on"]
 
     def __str__(self):
