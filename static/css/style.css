@@ -71,11 +71,6 @@ h2 {
     padding-bottom: 50px;
 }
 
-.card-img-top {
-    border: 3px solid black;
-    border-style: inset;
-}
-
 .card-row {
     height: 200px;
     margin: 1%;
@@ -109,13 +104,10 @@ h2 {
 }
 
 .card-title-black {
-    /* background-color: rgba(138, 181, 241, 0.595); */
-    /* background-color: #047575; */
     background: linear-gradient(rgba(220, 225, 230, 0.527), transparent),
                 linear-gradient(to top left, rgb(230, 195, 125), transparent),
                 linear-gradient(to top right, rgb(133, 70, 11), transparent);
     background-blend-mode: screen;
-    /* color: #4A4A4F; */
     color: black;
     padding: 4px;
     border-radius: 25px;
@@ -125,6 +117,7 @@ h2 {
 .card-title-black:active {
     background-color:rgb(211, 38, 38);
     color: #fff;
+    border: solid black 2px;
 }
 
 .review-text {
