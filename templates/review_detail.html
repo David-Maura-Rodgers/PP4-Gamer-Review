@@ -6,21 +6,13 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-md-6 offset-md-3 masthead-text">
-                <!-- Post title goes in these h1 tags -->
+                <!-- Post title, game and subtitle goes in these h1 tags -->
                 <h1 class="review-title">{{ review.title }}</h1>
                 <hr>
                 <h2>{{ review.game }}</h2>
                 <h2>{{ review.subtitle }}</h2>
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="review-subtitle">{{ review.gamer }} | {{ review.created_on }}</p>
-            </div>
-            <div class="d-none d-md-block col-md-6 offset-md-3 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in review.featured_image.url %}
-                <!-- <img class="review-image" src="static/images/PP4-Gamer-Review-Detail.jpg" alt="game controllers" width="100%"> -->
-                {% else %}
-                <img src=" {{ review.featured_image.url }}" width="100%">
-                {% endif %}
             </div>
         </div>
     </div>
@@ -61,7 +53,6 @@
                             <span class="text-secondary">{{ review.number_of_likes }}</span>
                         </strong>
                     </div>
-
 
                     <div class="col-1">
                         <strong>
@@ -129,6 +120,7 @@
             <hr>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-8 card mb-4 mt-5">
             <h3>Comments:</h3>

@@ -1,11 +1,10 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from datetime import timedelta, date
+from django.contrib import messages
 from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponseRedirect
 from .models import Review
 from .forms import CommentForm, ReviewForm
-from django.urls import reverse
 
 
 class ReviewList(ListView):
@@ -19,7 +18,7 @@ class ReviewList(ListView):
     paginate_by = 6
 
 
-class PostedReview(LoginRequiredMixin, ListView):
+class PostedReview(LoginRequiredMixin, UserPassesTestMixin, ListView):
     '''
     This renders the Posted Review page
     User can view all posts they have made
@@ -32,7 +31,7 @@ class PostedReview(LoginRequiredMixin, ListView):
     paginate_by = 6
 
 
-class CreateReview(LoginRequiredMixin, CreateView):
+class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     '''
     This renders the Create A Review page
     User can post a review of their own
@@ -41,31 +40,42 @@ class CreateReview(LoginRequiredMixin, CreateView):
     model = Review
     form_class = ReviewForm
     template_name = 'create_review.html'
-    context_object_name = "posted_review"
-    success_url = "posted_review.html"
+    success_url = "/"
+
+    def test_func(self):
+        """
+        Function: test if user(gamer) is authenticated
+        """
+        if self.request.user.is_authenticated:
+            return True
+        else:
+            return False
 
     def form_valid(self, form):
         '''
-        Blank
+        Function: User can enter their own review using ReviewForm
+        This will save the content and send to server to be authorised
         '''
-
         form.instance.gamer = self.request.user
         form.save()
         # form.instance.review.set([self.request.user.pk])
-        self.success_url = "/posted_review/"
+        # self.success_url = "/posted_review/"
 
-        return super().form_valid(form)
+        messages.success(
+            self.request,
+            'Successfully created Review'
+        )
+
+        return super(CreateReview, self).form_valid(form)
 
 
 class EditReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     '''
-    -------------
+    Function: Allows User to edit their reviews
     '''
-
     model = Review
     form_class = ReviewForm
     template_name = 'edit_review.html'
-    context_object_name = "edit_review"
     success_url = "posted_review.html"
 
     def form_valid(self, form):
