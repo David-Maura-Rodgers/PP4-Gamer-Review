@@ -45,7 +45,6 @@ class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     This renders the Create A Review page
     User can post a review of their own
     '''
-
     model = Review
     form_class = ReviewForm
     template_name = 'create_review.html'
@@ -80,26 +79,53 @@ class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
 class EditReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     '''
-    Function: Allows User to edit their reviews
+    Allows User to edit their reviews
     '''
     model = Review
     form_class = ReviewForm
-    template_name = 'edit_review.html'
+    template_name = "edit_review.html"
     success_url = "/"
 
     def test_func(self):
         """
         Function: test if user(gamer) is authenticated
         """
-        return self.request.user.is_staff
+        return self.request.user.is_authenticated
            
     def form_valid(self, form):
-        """ Show toast on success """
+        """
+        Show toast on success
+        """
         messages.success(
             self.request,
             'You successfully updated your Review'
         )
         return super(EditReview, self).form_valid(form)
+
+
+class DeleteReview(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    '''
+    Allows User to delete their reviews
+    '''
+    model = Review
+    template_name = "delete_review.html"
+    success_url = "/"
+    
+    def test_func(self):
+        """
+        Function: test if user(gamer) is authenticated
+        """
+        return self.request.user.is_authenticated
+    
+    def form_valid(self, form):
+        """
+        Display toast message on form success
+        """
+        messages.success(
+            self.request,
+            'You successfully deleted the selected review'
+        )
+        return super(DeleteReview, self).form_valid(form)
 
 
 class ReviewDetail(View):
@@ -199,7 +225,6 @@ class ReviewLike(View):
         User can like a review and an icon changes to reflect that
         But only if they are logged in as a registered user
         '''
-
         review = get_object_or_404(Review, pk=pk)
         if review.likes.filter(id=request.user.id).exists():
             review.likes.remove(request.user)
@@ -218,7 +243,6 @@ class ReviewFunny(View):
         User can vote funny a review and an icon changes to reflect that
         But only if they are logged in as a registered user
         '''
-
         review = get_object_or_404(Review, pk=pk)
         if review.funny.filter(id=request.user.id).exists():
             review.funny.remove(request.user)
@@ -237,7 +261,6 @@ class ReviewInsightful(View):
         User can vote insightful a review and an icon changes to reflect that
         But only if they are logged in as a registered user
         '''
-
         review = get_object_or_404(Review, pk=pk)
         if review.insightful.filter(id=request.user.id).exists():
             review.insightful.remove(request.user)
