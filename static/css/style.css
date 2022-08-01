@@ -13,6 +13,11 @@ h2 {
     text-align: inherit;
 }
 
+.h3-review {
+    margin-top: 2.5%;
+    margin-left: 1%;
+}
+
 .posted-h2 {
     text-align: center;
 }
@@ -41,12 +46,6 @@ h2 {
     padding: 2%;
     text-align: center;
     margin: 0;
-    /* background-color: #a3b3e3; */
-    /* background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'); */
-    /* background-image: url('https://media.istockphoto.com/vectors/glowing-neon-reflex-on-a-womans-face-with-virtual-glasses-vector-id1077523284?k=20&m=1077523284&s=612x612&w=0&h=JQ0RXSSOUkPOkBKH1FlaX7pKNfSHDymD-AFiaVeGrMY=');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; */
     color: white;
     background-color: #445261;
     border-radius: 25px;
@@ -75,18 +74,31 @@ h2 {
     padding-bottom: 50px;
 }
 
-.card-row {
-    height: 200px;
-    margin: 1%;
-}
-
 .card-body {
     padding: 5px;
     border-radius: 25px;
 }
 
+.card-body-comments {
+    margin-bottom: 0.5%;
+}
+
 .create-form {
     text-align: center;
+}
+
+.review-content {
+    margin: 1%;
+}
+
+.col-2 {
+    margin: 1.5%;
+    clear: both;
+}
+
+.hr-row {
+    margin: 1%;
+    clear: both;
 }
 
 .form-inner {
