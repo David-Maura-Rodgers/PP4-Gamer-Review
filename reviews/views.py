@@ -85,30 +85,21 @@ class EditReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Review
     form_class = ReviewForm
     template_name = 'edit_review.html'
-    success_url = "posted_review.html"
+    success_url = "/"
 
+    def test_func(self):
+        """
+        Function: test if user(gamer) is authenticated
+        """
+        return self.request.user.is_staff
+            
     def form_valid(self, form):
-        '''
-        Blank
-        '''
-        form.instance.gamer = self.request.user
-        title = form.cleaned_data['']
-        game = form.cleaned_data['']
-        subtitle = form.cleaned_data['']
-        content = form.cleaned_data['']
-        
-        form.save()
-        # form.instance.review.set([self.request.user.pk])
-        self.success_url = "/posted_review/"
-
-        return super().form_valid(form)
-
-        def test_func(self):
-            """ Test user is staff or throw 403 """
-            if self.request.user.is_gamer:
-                return True
-            else:
-                return self.request.user == self.get_object().gamer
+        """ Show toast on success """
+        messages.success(
+            self.request,
+            'You successfully updated your Review'
+        )
+        return super(EditReview, self).form_valid(form)
 
 
 class ReviewDetail(View):
@@ -116,13 +107,11 @@ class ReviewDetail(View):
     This view will be rendered on the review detail page:
     User can see the content of posted reviews
     '''
-
     def get(self, request, pk, title, *args, **kwargs):
         '''
         User will be able to vote like, funny and insightful
         User can also see comments that have been made on the review
         '''
-
         queryset = Review.objects.filter(status=1)
         review = get_object_or_404(queryset, pk=pk)
         comments = review.comments.filter(approved=True).order_by(
@@ -159,7 +148,6 @@ class ReviewDetail(View):
         User can also comment on the selected review
         This is posted to admin to be authorised bt admin
         '''
-
         queryset = Review.objects.filter(status=1)
         review = get_object_or_404(queryset, pk=pk)
         comments = review.comments.filter(
@@ -206,7 +194,6 @@ class ReviewLike(View):
     '''
     User can like a review and an icon changes to reflect that
     '''
-
     def post(self, request, pk, *args, **kwargs):
         '''
         User can like a review and an icon changes to reflect that
@@ -226,7 +213,6 @@ class ReviewFunny(View):
     '''
     User can vote funny on a review and an icon changes to reflect that
     '''
-
     def post(self, request, pk, *args, **kwargs):
         '''
         User can vote funny a review and an icon changes to reflect that
@@ -246,7 +232,6 @@ class ReviewInsightful(View):
     '''
     User can vote insightful on a review and an icon changes to reflect that
     '''
-
     def post(self, request, pk, *args, **kwargs):
         '''
         User can vote insightful a review and an icon changes to reflect that
