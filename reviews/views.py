@@ -39,6 +39,21 @@ class PostedReview(LoginRequiredMixin, UserPassesTestMixin, ListView):
         else:
             return False
 
+    def get(self, pk, *args, **kwargs):
+        '''
+        User will be able to vote like, funny and insightful
+        User can also see comments that have been made on the review
+        '''
+        queryset = Review.objects.filter(status=1)
+        review = get_object_or_404(queryset, pk=pk)
+
+        return render(
+            "posted_review.html",
+            {
+                "review": review,
+            },
+        )
+
 
 class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     '''

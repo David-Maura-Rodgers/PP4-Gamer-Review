@@ -7,10 +7,14 @@ urlpatterns = [
     path(
         'create_review/', views.CreateReview.as_view(), name='create_review'),
     path(
-        'posted_review/', views.PostedReview.as_view(), name='posted_review'),
+        'posted_review/<slug:pk>/', views.PostedReview.as_view(),
+        name='posted_review'),
     path(
         'edit_review/<slug:pk>/', views.EditReview.as_view(),
         name='edit_review'),
+    path(
+        'delete_review/<slug:pk>/', views.DeleteReview.as_view(),
+        name='delete_review'),
     path(
         '<slug:pk>/<str:title>/', views.ReviewDetail.as_view(),
         name='review_detail'),
