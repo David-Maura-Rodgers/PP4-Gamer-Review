@@ -30,6 +30,15 @@ class PostedReview(LoginRequiredMixin, UserPassesTestMixin, ListView):
     template_name = "posted_review.html"
     paginate_by = 6
 
+    def test_func(self):
+        """
+        Function: test if user(gamer) is authenticated
+        """
+        if self.request.user.is_authenticated:
+            return True
+        else:
+            return False
+
 
 class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     '''
@@ -63,7 +72,7 @@ class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
         messages.success(
             self.request,
-            'Successfully created Review'
+            'Well done! You have successfully created a Game Review'
         )
 
         return super(CreateReview, self).form_valid(form)
