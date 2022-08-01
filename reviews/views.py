@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404, reverse
-from django.contrib import messages
 from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Review
 from .forms import CommentForm, ReviewForm
@@ -92,7 +92,7 @@ class EditReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         Function: test if user(gamer) is authenticated
         """
         return self.request.user.is_staff
-            
+           
     def form_valid(self, form):
         """ Show toast on success """
         messages.success(
