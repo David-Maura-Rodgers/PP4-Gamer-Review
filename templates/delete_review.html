@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+{% load crispy_forms_tags %}
+
+<!-- Menu confirm delete form -->
+<div class="form-style text-center p-3 m-3">
+    <h1 class="text-center">Confirm Review Deletion</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete:</p>   
+        <h5>{{ object.name }} ?</h5>
+        <input type="submit" value="Confirm" class="btn btn-signup btn-lg" aria-label="confirm">
+    </form>
+</div>
+{% endblock %}

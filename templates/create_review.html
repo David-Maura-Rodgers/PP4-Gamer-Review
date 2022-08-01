@@ -4,19 +4,6 @@
 <!-- https://startbootstrap.com/snippets/full-image-header -->
 <div class="masthead">
     <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-md-6 offset-md-3 masthead-text">
-                <!-- Post title goes in these h1 tags -->
-            </div>
-            <div class="d-none d-md-block col-md-6 offset-md-3 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in review.featured_image.url %}
-                <!-- <img class="review-image" src="static/images/PP4-Gamer-Review-Detail.jpg" alt="game controllers" width="100%"> -->
-                {% else %}
-                <img src=" {{ review.featured_image.url }}" width="100%">
-                {% endif %}
-            </div>
-        </div>
     </div>
 </div>
 
