@@ -281,3 +281,23 @@ h2 {
 .footer-text > a[href*="instagram"] {
     color: rgb(103, 22, 22);
 }
+
+
+@media screen and (max-width: 1200px) {
+    
+    .panel-heading {
+        max-width: 100px;
+    }
+
+    .note-dropzone {
+        max-width: 100px;
+    }
+
+    .note-editor {
+        max-width: 100px;
+    }
+
+    .note-toolbar {
+        max-width: 100px;
+    }
+}

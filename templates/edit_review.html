@@ -15,12 +15,13 @@
 
         {% if user.is_authenticated %}
 
-        <h2 class="posted-h2">Please select which of your reviews you'd like to edit</h2>
+        <h2 class="posted-h2">Please edit your review using the form below:</h2>
         <hr>
         
         <div class="home-button">
             <a href="/posted_review/"><button class= "btn-home btn-lg" type="submit" action="{% url 'posted_review' %}">Cancel</button></a>
         </div>
+        <hr>
         
         <div class="create-form">
             <div class="card-body">
@@ -28,8 +29,6 @@
 
                     {% if user.is_authenticated %}
 
-                    <h3>Edit your review below:</h3>
-                    <hr>
                     <p>Reposting as Gamer: {{ user.gamer }}</p>
                     <form class="form-inner" method="post">
                         {{ form | crispy }}

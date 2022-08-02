@@ -1,4 +1,4 @@
-from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import View, ListView, CreateView, UpdateView, DeleteView  # noqa
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
@@ -25,14 +25,18 @@ class PostedReview(LoginRequiredMixin, UserPassesTestMixin, ListView):
     '''
 
     model = Review
-    queryset = Review.objects.filter(status=1).order_by(
-        '-created_on')
+    # queryset = Review.objects.filter(status=1).order_by(
+    #     '-created_on')
     template_name = "posted_review.html"
     paginate_by = 6
 
     def get_queryset(self):
-        return Review.objects.filter(status=1, gamer=self.request.user).order_by(
-        '-created_on')
+        '''
+        Function: return only the users reviews 
+        exluding reviews by any other user
+        '''
+        return Review.objects.filter(
+            status=1, gamer=self.request.user).order_by('-created_on')
 
     def test_func(self):
         """
@@ -90,12 +94,6 @@ class EditReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = "edit_review.html"
     success_url = "/"
 
-    def test_func(self):
-        """
-        Function: test if user(gamer) is authenticated
-        """
-        return self.request.user.is_authenticated
-           
     def form_valid(self, form):
         """
         Show toast on success
@@ -106,6 +104,12 @@ class EditReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         )
         return super(EditReview, self).form_valid(form)
 
+    def test_func(self):
+        """
+        Function: test if user(gamer) is authenticated
+        """
+        return self.request.user.is_authenticated
+
 
 class DeleteReview(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     '''
@@ -114,13 +118,7 @@ class DeleteReview(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Review
     template_name = "delete_review.html"
     success_url = "/"
-    
-    def test_func(self):
-        """
-        Function: test if user(gamer) is authenticated
-        """
-        return self.request.user.is_authenticated
-    
+
     def form_valid(self, form):
         """
         Display toast message on form success
@@ -130,6 +128,12 @@ class DeleteReview(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             'You successfully deleted the selected review'
         )
         return super(DeleteReview, self).form_valid(form)
+
+    def test_func(self):
+        """
+        Function: test if user(gamer) is authenticated
+        """
+        return self.request.user.is_authenticated
 
 
 class ReviewDetail(View):
