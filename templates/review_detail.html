@@ -18,6 +18,13 @@
     </div>
 </div>
 
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'edit_review' review.pk %}">Edit Reviews</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'delete_review' review.pk %}">Delete Reviews</a>
+</li>
+
 <div class="container-fluid-home">
     <div class="card-row">
         <div class="review-content">

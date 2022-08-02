@@ -47,13 +47,7 @@
                         <a class="nav-link" href="{% url 'create_review' %}">Create A Review</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'posted_review' review.pk %}">Your Reviews</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'edit_review' review.pk %}">Edit Reviews</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'delete_review' review.pk %}">Delete Reviews</a>
+                        <a class="nav-link" href="{% url 'posted_review' %}">Your Reviews</a>
                     </li>
     
                     {% else %}

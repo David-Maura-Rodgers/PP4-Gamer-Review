@@ -30,6 +30,10 @@ class PostedReview(LoginRequiredMixin, UserPassesTestMixin, ListView):
     template_name = "posted_review.html"
     paginate_by = 6
 
+    def get_queryset(self):
+        return Review.objects.filter(status=1, gamer=self.request.user).order_by(
+        '-created_on')
+
     def test_func(self):
         """
         Function: test if user(gamer) is authenticated
@@ -38,21 +42,6 @@ class PostedReview(LoginRequiredMixin, UserPassesTestMixin, ListView):
             return True
         else:
             return False
-
-    def get(self, pk, *args, **kwargs):
-        '''
-        User will be able to vote like, funny and insightful
-        User can also see comments that have been made on the review
-        '''
-        queryset = Review.objects.filter(status=1)
-        review = get_object_or_404(queryset, pk=pk)
-
-        return render(
-            "posted_review.html",
-            {
-                "review": review,
-            },
-        )
 
 
 class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
