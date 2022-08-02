@@ -12,58 +12,55 @@
 <!-- https://startbootstrap.com/snippets/full-image-header -->
 
 <div class="container-fluid-home">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
 
-            {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
 
-            <h2 class="posted-h2">Please select which of your reviews you'd like to edit</h2>
-            <hr>
-            <div class="home-button">
-                <a href="/"><button class= "btn-home btn-lg" type="submit" action="{% url 'home' %}">Back to Home</button></a>
-            </div>
-            
-            <div class="create-form">
-                <div class="card-body">
-                    <div class="create-text">
-    
-                        {% if user.is_authenticated %}
-    
-                        <h3>Post a review:</h3>
-                        <hr>
-                        <p>Posting as Gamer: {{ user.username }}</p>
-                        <form class="form-inner" method="post">
-                            {{ form | crispy }}
-                            {% csrf_token %}
-                            <hr>
-                            <button type="submit" class="btn btn-signup btn-lg" aria-label="submit">Submit Review</button>
-                        </form>
-                    </div> 
-                        {% endif %}
-                </div>
-            </div>
-                
-            {% endif %}
-
-            {% if is_paginated %}
-
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
+        <h2 class="posted-h2">Please select which of your reviews you'd like to edit</h2>
+        <hr>
         
-                    {% if page_obj.has_previous %}
-                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-                    {% endif %}
-        
-                    {% if page_obj.has_next %}
-                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-                    {% endif %}
-                    
-                </ul>
-            </nav>
-        
-            {% endif %}
-        
+        <div class="home-button">
+            <a href="/posted_review/"><button class= "btn-home btn-lg" type="submit" action="{% url 'posted_review' %}">Cancel</button></a>
         </div>
+        
+        <div class="create-form">
+            <div class="card-body">
+                <div class="create-text">
+
+                    {% if user.is_authenticated %}
+
+                    <h3>Edit your review below:</h3>
+                    <hr>
+                    <p>Reposting as Gamer: {{ user.gamer }}</p>
+                    <form class="form-inner" method="post">
+                        {{ form | crispy }}
+                        {% csrf_token %}
+                        <hr>
+                        <button type="submit" class="btn btn-signup btn-lg" aria-label="submit">Submit Review</button>
+                    </form>
+                </div> 
+                    {% endif %}
+            </div>
+        </div>
+            
+        {% endif %}
+
+        {% if is_paginated %}
+
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+    
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                {% endif %}
+    
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                {% endif %}
+                
+            </ul>
+        </nav>
+    
+        {% endif %}
     </div>
 </div>
 {% endblock %}

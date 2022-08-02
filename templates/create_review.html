@@ -14,27 +14,24 @@
 </div>
 
 <div class="container-fluid-home">
-    <div class="row">
-        <div class="create-form">
-            <div class="card-body">
-                <div class="create-text">
+    <div class="create-form">
+        <div class="card-body">
+            <div class="create-text">
 
-                    {% if user.is_authenticated %}
+                {% if user.is_authenticated %}
 
-                    <h3>Post a review:</h3>
+                <h3>Post your review using the form below:</h3>
+                <hr>
+                <p>Posting as Gamer: {{ user.gamer }}</p>
+                <form class="form-inner" method="post">
+                    {{ form | crispy }}
+                    {% csrf_token %}
                     <hr>
-                    <p>Posting as Gamer: {{ user.username }}</p>
-                    <form class="form-inner" method="post">
-                        {{ form | crispy }}
-                        {% csrf_token %}
-                        <hr>
-                        <button type="submit" class="btn btn-signup btn-lg" aria-label="submit">Submit Review</button>
-                    </form>
-                </div> 
-                   
-                    {% endif %}
-
-            </div>
+                    <button type="submit" class="btn btn-signup btn-lg" aria-label="submit">Submit Review</button>
+                </form>
+            </div> 
+                
+                {% endif %}
         </div>
     </div>
 </div>

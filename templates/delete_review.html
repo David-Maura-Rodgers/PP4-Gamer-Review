@@ -14,10 +14,17 @@
     <h1 class="text-center">Confirm Review Deletion</h1>
     <form method="post">
         {% csrf_token %}
-        <p>Are you sure you want to delete this review?</p>   
+        <h5>Are you sure you want to delete this review?</h5> 
+        <hr>  
         <h4>{{ review.title }} </h4>
         <h4>{{ review.game }} </h4>
+        <hr>
         <input type="submit" value="Confirm" class="btn btn-signup btn-lg" aria-label="confirm">
     </form>
 </div>
+
+<div class="btn-cancel">
+    <a href="/posted_review/"><button class= "btn-home btn-lg" type="submit" action="{% url 'posted_review' %}">Cancel</button></a>
+</div>
+
 {% endblock %}
