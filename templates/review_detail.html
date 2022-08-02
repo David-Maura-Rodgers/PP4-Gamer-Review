@@ -18,12 +18,12 @@
     </div>
 </div>
 
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'edit_review' review.pk %}">Edit Reviews</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'delete_review' review.pk %}">Delete Reviews</a>
-</li>
+<div class="btn-editdelete">
+    <a href="{% url 'edit_review' review.pk %}"><button class= "btn-home btn-lg" type="submit" action="{% url 'edit_review' review.pk %}">Edit Review</button></a>
+</div>
+<div class="btn-editdelete">
+    <a href="{% url 'delete_review' review.pk %}"><button class= "btn-home btn-lg" type="submit" action="{% url 'delete_review' review.pk %}">Delete Review</button></a>
+</div>
 
 <div class="container-fluid-home">
     <div class="card-row">
