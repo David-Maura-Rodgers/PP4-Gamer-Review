@@ -33,7 +33,7 @@ class PostedReview(LoginRequiredMixin, UserPassesTestMixin, ListView):
     def get_queryset(self):
         '''
         Function: return only the users reviews 
-        exluding reviews by any other user
+        excluding reviews by any other user
         '''
         return Review.objects.filter(
             status=1, gamer=self.request.user).order_by('-created_on')
@@ -108,7 +108,7 @@ class EditReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         """
         Function: test if user(gamer) is authenticated
         """
-        return self.request.user.is_authenticated
+        return self.request.user == self.get_object().gamer
 
 
 class DeleteReview(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -133,7 +133,7 @@ class DeleteReview(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         """
         Function: test if user(gamer) is authenticated
         """
-        return self.request.user.is_authenticated
+        return self.request.user == self.get_object().gamer
 
 
 class ReviewDetail(View):

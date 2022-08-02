@@ -10,11 +10,6 @@ class CommentForm(forms.ModelForm):
 
 
 class ReviewForm(forms.ModelForm):
-    '''
-    Allows user to enter data in the fields below
-    '''
-    content = forms.CharField(widget=SummernoteWidget())
-
     class Meta:
         model = Review
         fields = ('title', 'game', 'subtitle', 'content',)
