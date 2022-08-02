@@ -136,9 +136,10 @@ h2 {
     border: solid black 2px;
 }
 
-.review-text {
+/* .review-text {
     font-weight: 800;
-}
+    font-family: Oswald, sans-serif;
+} */
 
 .image-container {
     position: relative;
