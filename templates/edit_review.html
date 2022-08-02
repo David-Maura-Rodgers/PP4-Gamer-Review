@@ -1,25 +1,17 @@
 {% extends "base.html" %} {% block content %}
+{% load crispy_forms_tags %}
+
+{{ form.media }}
 
 <!-- https://startbootstrap.com/snippets/full-image-header -->
 <div class="masthead">
     <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-md-6 offset-md-3 masthead-text">
-                <!-- Post title goes in these h1 tags -->
-            </div>
-            <div class="d-none d-md-block col-md-6 offset-md-3 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in review.featured_image.url %}
-                <!-- <img class="review-image" src="static/images/PP4-Gamer-Review-Detail.jpg" alt="game controllers" width="100%"> -->
-                {% else %}
-                <img src=" {{ review.featured_image.url }}" width="100%">
-                {% endif %}
-            </div>
-        </div>
     </div>
 </div>
 
-<div class="container">
+<!-- https://startbootstrap.com/snippets/full-image-header -->
+
+<div class="container-fluid-home">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
 
@@ -27,49 +19,30 @@
 
             <h2 class="posted-h2">Please select which of your reviews you'd like to edit</h2>
             <hr>
-            <div class="row">
-            <button class= "btn-home btn-lg" type="submit" action="{% url 'home' %}">Back to Home</button>
+            <div class="home-button">
+                <a href="/"><button class= "btn-home btn-lg" type="submit" action="{% url 'home' %}">Back to Home</button></a>
             </div>
-            <div class="col-12 mt-0 left">
-                <div class="row">
-
-                    {% for review in review_list %}
-
-                    <div class="col-md-6 offset-md-3">
-                        <div class="card text-center">
-                            <div class="card-body">
-        
-                                <div class="image-flash">
-                                    <p class="gamer">Gamer: {{ review.gamer }}</p>
-                                </div>
-                                
-                                <a href="{% url 'review_detail' review.pk review.title  %}" class="review-link">
-                                    <h2 class="card-title">{{ review.title }}</h2>
-                                    <h2 class="card-title-black">{{ review.game }}</h2>
-                                    <p class="subtitle-text">{{ review.subtitle }}</p>
-                                </a>
-                                <hr>
-                                <p class="card-text h5">{{ review.created_on}}
-                                    <p class="icons">
-                                    Like: <i class="fa fa-thumbs-up"></i>
-                                    {{ review.number_of_likes }}   
-                                    Funny: <i class="fa fa-smile-o"></i>
-                                    {{ review.number_of_funny }}   
-                                    Insightful: <i class="fa fa-lightbulb-o"></i>
-                                    {{ review.number_of_insightful }}
-                                    </p>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    {% if forloop.counter|divisibleby:3 %}
-                </div>
-                <div class="row">
-                    {% endif %}
-                    {% endfor %}
+            
+            <div class="create-form">
+                <div class="card-body">
+                    <div class="create-text">
+    
+                        {% if user.is_authenticated %}
+    
+                        <h3>Post a review:</h3>
+                        <hr>
+                        <p>Posting as Gamer: {{ user.username }}</p>
+                        <form class="form-inner" method="post">
+                            {{ form | crispy }}
+                            {% csrf_token %}
+                            <hr>
+                            <button type="submit" class="btn btn-signup btn-lg" aria-label="submit">Submit Review</button>
+                        </form>
+                    </div> 
+                        {% endif %}
                 </div>
             </div>
-
+                
             {% endif %}
 
             {% if is_paginated %}
