@@ -36,10 +36,11 @@
                             <p class="gamer">Gamer: {{ review.gamer }}</p>
                         </div>
                     </div>
+                    <h2 class="card-title">{{ review.title }}</h2>
                     <a href="{% url 'review_detail' review.pk review.title  %}" class="review-link">
-                        <h2 class="card-title">{{ review.title }}</h2>
-                        <h2 class="card-title-black">{{ review.game }}</h2>
-                        <p class="subtitle-text">{{ review.subtitle }}</p>
+                    <h2 class="card-title-black">{{ review.game }}</h2>
+                    </a>
+                    <p class="subtitle-text">{{ review.subtitle }}</p>
                     </a>
                     <hr/>
                     <p class="card-text h5">{{ review.created_on}}
@@ -55,7 +56,6 @@
                 </div>
             </div>
         
-
         {% if forloop.counter|divisibleby:3 %}
         </div>    
         <div class="row">

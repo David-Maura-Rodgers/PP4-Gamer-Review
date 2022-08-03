@@ -102,6 +102,7 @@ h2 {
 
 .subtitle-text {
     font-size: 22px;
+    color: #2b527f
 }
 
 .create-text {
@@ -111,6 +112,10 @@ h2 {
 .create-title {
     margin: 1%;
     text-align: center;
+}
+
+.card-title {
+    color: #2b527f;
 }
 
 .card-title-black {
