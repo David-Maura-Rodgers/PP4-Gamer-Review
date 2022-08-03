@@ -79,7 +79,6 @@ class Comment(models.Model):
         """
         Order review posts by dates they are created on
         """
-
         ordering = ["created_on"]
 
     def __str__(self):

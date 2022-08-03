@@ -22,4 +22,55 @@ If the user would like to register, they can click the link to do so and then th
 ![image](https://user-images.githubusercontent.com/91907661/182706542-bd14bbe3-90aa-408f-b792-44abed28a999.png)  
 
 
+### Create a Review:
+Once the user is logged in, they can post a review to be authorised for publishing by the site Admin.
+
+They have four fields to complete, 3 of which are mandatory. If these 3 fields - Title, Game, Content are not filled in, an on screen prompt will appear informing the site user.
+
+![image](https://user-images.githubusercontent.com/91907661/182711196-7b14e81e-71c3-4c6e-840d-516296e2d734.png)
+
+
 ### Your Reviews:
+Once the user is logged in, they can view the list of reviews they posted, but only those that have been authorised by the site Admin.
+
+Importantly, this list only contains the reviews the user themselves have posted. The releavnce of this will be explained further on.
+
+![image](https://user-images.githubusercontent.com/91907661/182710143-425b5f85-1d85-4e8a-ace4-0c588c3fb7c6.png)
+
+
+### Review Detail:
+Below is a what the user will see when the click on review to see the content.
+
+The review title, game and subtitle are displayed along with date the review was created on.
+
+![image](https://user-images.githubusercontent.com/91907661/182712169-71790644-3744-4f08-a56f-ea39dbdb421c.png)
+
+
+When the user scrolls down they can see more of the review content itself. They vote to like a review, or click the smiley face if they think its is amusing, or the lightbulb if they think it is intresting or insightful.
+
+They can also view any comments made by other users or they can post a comment of their - pending Admin approval.
+
+
+![image](https://user-images.githubusercontent.com/91907661/182712764-214a9217-b6af-443d-be3a-ae6eda126a59.png)
+
+
+### Edit and Delete Reviews:
+From the Your Reviews page - The user can also chose to edit or delete their own reviews. As shown below:
+
+![image](https://user-images.githubusercontent.com/91907661/182714588-c94bce8d-75b5-4fcc-b4c2-0459fdcef515.png)
+
+If they select edit or delete, they will be taken to the appropraite pages as hown below:
+
+![image](https://user-images.githubusercontent.com/91907661/182715104-0375ca0e-ae07-4802-b01d-eeada7426d74.png)
+
+![image](https://user-images.githubusercontent.com/91907661/182715380-98a0b481-3920-4082-a745-401108d62b43.png)
+
+
+### Edit and Delete Reviews (SAFETY FEATURE):
+As mentioned above, it is important that that user who are logged can only see their own reviews from the Your Reviews, as this gives access to the edit and delete options.
+
+In the case shown below, the user logged in is David. If I click on a post made in the home page made by Aoife or any user that isn't David, I will only be able to view and comment on the post.
+
+As shown below - the option to edit or delete is not available to me:
+
+![image](https://user-images.githubusercontent.com/91907661/182717699-d6b9f9da-f890-4ec4-a4ef-6b44a05512a1.png)
