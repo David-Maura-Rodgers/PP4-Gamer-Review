@@ -61,7 +61,7 @@ From the Your Reviews page - The user can also choose to edit or delete their ow
  
 If they select edit or delete, they will be taken to the appropriate pages as hown below:
  
-![image](https://user-images.githubusercontent.com/91907661/182715104-0375ca0e-ae07-4802-b01d-eeada7426d74.png)
+![image](https://user-images.githubusercontent.com/91907661/183263526-7a365c86-67ea-4868-8efb-0081ba6313ab.png)
  
 ![image](https://user-images.githubusercontent.com/91907661/182715380-98a0b481-3920-4082-a745-401108d62b43.png)
  
