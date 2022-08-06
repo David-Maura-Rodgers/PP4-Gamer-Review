@@ -51,8 +51,11 @@ Below is what the user will see when they click on review to see the content.
  
 The review title, game and subtitle are displayed along with the date the review was created on.
  
-![image](https://user-images.githubusercontent.com/91907661/182712169-71790644-3744-4f08-a56f-ea39dbdb421c.png)
- 
+<br>
+
+![image](https://user-images.githubusercontent.com/91907661/183266457-3ba44111-d95d-4c95-8ec0-05365355ff9b.png)
+
+<br>
  
 When the user scrolls down they can see more of the review content itself. They vote to like a review, or click the smiley face if they think its is amusing, or the lightbulb if they think it is interesting or insightful.
  
@@ -81,6 +84,10 @@ If they select edit or delete, they will be taken to the appropriate pages as ho
  
 ## Edit and Delete Reviews (SAFETY FEATURE):
 As mentioned above, it is important that the user who is logged in can only see their own reviews from the Your Reviews, as this gives access to the edit and delete options.
+
+<BR>
+
+![image](https://user-images.githubusercontent.com/91907661/183266381-2b432e01-a024-4ac9-b60e-fadd4a39fd87.png)
 
 <BR>
 
