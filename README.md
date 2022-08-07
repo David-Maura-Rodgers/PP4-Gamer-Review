@@ -141,6 +141,7 @@ This Epic required the installation of allauth from the Django framework. This c
 <br>
 
 **EPIC 5 - User interaction: comments, likes and toasts**
+
 This Epic focused on interactivity and more dynamic parts of the app.
 
 - User can click on icons in review detail page: like, funny, insighful
@@ -151,6 +152,7 @@ This Epic focused on interactivity and more dynamic parts of the app.
 <br>
 
 **EPIC 6 - Submit, edit and delete Reviews**
+
 This part of the project was the most time consuming but essential components of the site. 3 key features are as follows:
 
 - Once user is logged in and authenticated, they can access the Create a Review page
@@ -161,8 +163,41 @@ This part of the project was the most time consuming but essential components of
 <br>
 
 **EPIC 7 - Documentation and Deployment**
+
 I have set up whitenoise so that my static files are served in deployment. I have also deployed the project to Heroku so that it is live for users.
 
 ### Tasks:
 - Complete readme documentation
 - Complete testing documentation write up
+
+
+# WIREFRAMES:
+Below I will provide wireframes to illustrate how I thought each page would appear.
+
+All pages will be fully responsive to all pixel sizes and the nav menu will become a burger icon for smaller resolutions
+
+### Home Page:
+
+![image](https://user-images.githubusercontent.com/91907661/183301047-b3610743-15a7-420b-9589-844978434ccd.png)
+
+### Sign Up:
+
+![image](https://user-images.githubusercontent.com/91907661/183301174-616b0d28-12de-44e3-9727-15f44cbe5279.png)
+
+### Sign In:
+
+![image](https://user-images.githubusercontent.com/91907661/183301094-2339cb7c-2844-474b-a9cd-fe39a55d668b.png)
+
+### Review Detail:
+
+![image](https://user-images.githubusercontent.com/91907661/183302034-efbdb447-112d-4c3d-ba3b-98007f293856.png)
+
+### Create A Review:
+
+![image](https://user-images.githubusercontent.com/91907661/183301376-c0cef37d-e0c9-4ce6-83bb-07d4cc67a445.png)
+
+### Edit and Delete Review:
+
+The Edit page will very much resemble the Create A Review page, but the functionality here will be to edit what has been posted by the user previously.
+
+The Delete page functions as you would expect, and will just ask the user to delete the selected review or cancel and go back to previous page.
