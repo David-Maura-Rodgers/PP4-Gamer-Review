@@ -22,7 +22,7 @@
 
                 <h3>Post your review using the form below:</h3>
                 <hr>
-                <p>Posting as Gamer: {{ user.gamer }}</p>
+                <p>Posting as Gamer: {{ user.username }}</p>
                 <form class="form-inner" method="post" enctype="multipart/form-data">
                     {{ form | crispy }}
                     {% csrf_token %}
