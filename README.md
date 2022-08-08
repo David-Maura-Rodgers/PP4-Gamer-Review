@@ -201,3 +201,23 @@ All pages will be fully responsive to all pixel sizes and the nav menu will beco
 The Edit page will very much resemble the Create A Review page, but the functionality here will be to edit what has been posted by the user previously.
 
 The Delete page functions as you would expect, and will just ask the user to delete the selected review or cancel and go back to previous page.
+
+### Database-Design
+
+The purpose of the database is to make CRUD functionlaity available to the user. The Review model is at the heart of this - it provides the framework from which the user interacts with the site, with all the most relevant aspects related to creating a game review.
+
+The next model is the Comments model, which allows community engagement among registered users to leave comments for one another's review posts.
+
+Users are also able to to leave likes, funny and insightful votes using the icons mentioned previously. These are handled as many to many relationships as many users can leave many votes for many reviews.
+
+Entity relationship diagram was created using [DBVisualizer](https://www.dbvis.com/) and shows the schemas for each of the models and how they are related.
+
+![image](https://user-images.githubusercontent.com/91907661/183520884-739a977f-ce2c-4d47-a687-ca820bb9aa5e.png)
+
+<br>
+
+### Security
+I have used using the UserPassesTextMixin and LoginRequiredMixin within the Django class based views.
+Restricted functionality such as edit and delete functionality listed in the features was secured using this method.
+
+Environment variables are stored in env.py and included in gitignore and these variables and their values are also stored with Heroku Config vars.
