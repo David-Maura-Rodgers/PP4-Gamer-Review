@@ -5,11 +5,17 @@ Gamer Reviews is a site dedicated to gamers who would like to post their own rev
 
 <br>
 
-# APPLICATION TESTING 
+# INSTRUCTIONS FOR USING SITE ADMIN FUNCTION
  
 <br>
 
-# INSTRUCTIONS FOR USING SITE ADMIN FUNCTION
+# APPLICATION TESTING, VALIDATION & SEO
+
+I have provided a seperate file for all my Test cases and outcomes. This can be found in the [TESTING.md](TESTING.md) file.
+
+<br>
+
+# BUGS & FUTURE ENHANCEMENTS
 
 <br>
 

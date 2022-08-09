@@ -19,12 +19,12 @@
         <h4>{{ review.title }}</h4>
         <h4>{{ review.game }}</h4>
         <hr>
-        <input type="submit" value="Confirm" class="btn btn-signup btn-lg" aria-label="confirm">
+        <input type="submit" value="Confirm Delete" class="btn btn-signup btn-lg" aria-label="confirm">
     </form>
 </div>
 
 <div class="btn-cancel">
-    <a href="/posted_review/"><button class= "btn-home btn-lg" type="submit" action="{% url 'posted_review' %}">Cancel</button></a>
+    <a href="/posted_review/"><button class= "btn-home btn-lg" type="submit" action="{% url 'posted_review' %}">Cancel Delete</button></a>
 </div>
 
 {% endblock %}

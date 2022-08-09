@@ -171,7 +171,7 @@ Steps:
 1. Ensure site user is logged in
 2. Click on any Review Title on the home page
 3. User can scroll through the page to see review text, icons and comment form.
-4. User can enter a comment to be submitted to Site Admin for approval
+4. User enters a comment to be submitted to Site Admin for approval
 
 Expected:
 
@@ -179,4 +179,108 @@ User can click on any Review Title and see full content of review plus icons and
 
 Actual:
 
-User can see all the content as mentioned above. When they click on the Submit Comment button they are kept on same page and told their comment has 
+User can see all the content as mentioned above. When they click on the Submit Comment button they are kept on same page and told their comment has been submitted for approval
+
+<hr>
+<br>
+
+**Description:**
+
+**User can upvote and undo upvote on the like, funny and insightful icons**
+
+Steps:
+1. Ensure site user is logged in
+2. Click on any of the like, funny and insightful icons
+3. Check that the icons counter has increased by 1
+4. Click on the same icon to see if icon counter is reduced by 1
+
+Expected:
+
+User can click on any of the like, funny and insightful icons. The counter is increased by 1, and decreased by 1 if the click on same icon to undo.
+
+Actual:
+
+User can click on any of the like, funny and insightful icons. The counter is increased by 1, and decreased by 1 if the click on same icon to undo.
+
+<hr>
+<br>
+
+**Description:**
+
+**User can edit their reviews**
+
+Steps:
+1. Ensure site user is logged in
+2. From either the Home page or Your Reviews page, click on any review owned by the user
+3. Click on the Edit Review button
+4. Change text in fields
+5. Click on Submit Changes button
+
+Expected:
+
+User can click Edit Review button from their reviews once they are on the review detail page. They are then taken to a form which allows user to edit previously entered content.
+
+Actual:
+
+User can click Edit Review button from their reviews once they are on the review detail page. They are then taken to a form which allows user to edit previously entered content. They are then redirected to the Your Reviews page and receive a toast message confirming that they have succesfully updated their review.
+
+<hr>
+<br>
+
+**Description:**
+
+**User can delete their reviews**
+
+Steps:
+1. Ensure site user is logged in
+2. From either the Home page or Your Reviews page, click on any review owned by the user
+3. Click on the Delete Review button
+4. Click on Confirm Delete button
+
+Expected:
+
+User can click Delete Review button from their reviews once they are on the review detail page. They are then taken to a page which asks them to either Confirm Delete or Cancel Delete via buttons.
+
+Actual:
+
+User can click Delete Review button from their reviews once they are on the review detail page. They are then taken to a page which asks them to either Confirm Delete or Cancel Delete via buttons.
+
+<hr>
+<br>
+
+**Description:**
+
+**User can Edit and Delete *ONLY* their own reviews**
+
+Steps:
+1. Ensure site user is logged in
+2. From either the Home page or Your Reviews page, click on any review owned by the user
+
+Expected:
+
+If user is not the gamer/owner of their post, they should not be able to see any option to Edit or Delete a review.
+
+Actual:
+
+User can only see an option to go back to home page, and no buttons appear for Edit or Delete review.
+
+<hr>
+<br>
+
+**Description:**
+
+**All nav links and buttons work as intended**
+
+Steps:
+1. Ensure site user is logged in
+2. Click all nav bar links to ensure they direct user as intended
+3. Click all Review Title links (with dynamic colour background) to make sure they go to the corresponding review detail page
+4. Click all Cancel, Submit and Back to home buttons
+
+Expected:
+
+User should be able to click on all links and buttons as described in the steps above and works as intended
+
+Actual:
+
+User can click on all links and buttons as described in the steps above and they work as intended
