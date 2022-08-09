@@ -5,7 +5,7 @@
 <div class="container-fluid-home">
     <div class="welcome">
         <h3>WELCOME TO GAMER REVIEWS</h3>
-        <p class="welcome-p">
+        <div class="welcome-text">
             Welcome to Gamer Reviews. This is a site where games are reviewed by Gamers themselves.
             Any game on any console can be reviewed. The aim of this site is to create a community 
             of gamers who like to review and give their perspective on the games they are playing
@@ -17,9 +17,9 @@
             <br>
             <br>
             We look forward to receiving your reviews!
-        </p class="welcome-p">
+        </div>
     </div>
-    
+
     <!-- Review Entries Column -->
     <div class="col-12 mt-0 left">
         <div class="row">
@@ -37,22 +37,23 @@
                                 <p class="gamer">Gamer: {{ review.gamer }}</p>
                             </div>
                         </div>
+                        
                         <h2 class="card-title">{{ review.title }}</h2>
                         <a href="{% url 'review_detail' review.pk review.title  %}" class="review-link">    
                         <h2 class="card-title-black">{{ review.game }}</h2>
                         </a>    
-                        <p class="subtitle-text">{{ review.subtitle }}</p>
+                        <span class="subtitle-text">{{ review.subtitle }}</span>
                         <hr/>
-                        <p class="card-text h5">{{ review.created_on}}
-                            <p class="icons">
+                        <div class="card-text">{{ review.created_on}}
+                            <div class="icons">
                             Like: <i class="fa fa-thumbs-up"></i>
                             {{ review.number_of_likes }}   
                             Funny: <i class="fa fa-smile-o"></i>
                             {{ review.number_of_funny }}   
                             Insightful: <i class="fa fa-lightbulb-o"></i>
                             {{ review.number_of_insightful }}
-                            </p>
-                        </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -50,7 +50,7 @@ h2 {
     border: 2px solid black;
 }
 
-.welcome-p {
+.welcome-text {
     position: relative;
     left:0;
     top: 0;
@@ -68,10 +68,9 @@ h2 {
     padding-bottom: 50px;
 }
 
-/* img {
-    height: 50%;
-    width: 50%;
-} */
+.card-text {
+    font-size: 22px;
+}
 
 .card-body {
     padding: 5px;
