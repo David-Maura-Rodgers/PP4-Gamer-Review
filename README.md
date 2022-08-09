@@ -2,7 +2,15 @@
  
 ## Purpose of this site/application:
 Gamer Reviews is a site dedicated to gamers who would like to post their own reviews of games they have been playing. The user or gamer in this case, can post their own reviews, which are subject to authorisation by the site Admin. Once approved, the user can then view the reviews they have posted to the site and edit or delete them as they wish - provided that they are logged in with their user credentials.
+
+<br>
+
+# APPLICATION TESTING 
  
+<br>
+
+# INSTRUCTIONS FOR USING SITE ADMIN FUNCTION
+
 <br>
 
 # FEATURES:
