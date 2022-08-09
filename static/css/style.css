@@ -68,6 +68,11 @@ h2 {
     padding-bottom: 50px;
 }
 
+card-img-top {
+    height: 300px;
+    height: 300px;
+}
+
 .card-body {
     padding: 5px;
     border-radius: 25px;
@@ -102,7 +107,7 @@ h2 {
 
 .subtitle-text {
     font-size: 22px;
-    color: #2b527f
+    color: #143357;
 }
 
 .create-text {
@@ -115,7 +120,7 @@ h2 {
 }
 
 .card-title {
-    color: #2b527f;
+    color: #143357;
 }
 
 .card-title-black {

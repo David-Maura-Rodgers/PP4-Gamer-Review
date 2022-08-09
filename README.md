@@ -1,21 +1,29 @@
 # GAMER REVIEWS - README
  
-## Purpose of this site/application:
+## PURPOSE OF THIS SITE:
 Gamer Reviews is a site dedicated to gamers who would like to post their own reviews of games they have been playing. The user or gamer in this case, can post their own reviews, which are subject to authorisation by the site Admin. Once approved, the user can then view the reviews they have posted to the site and edit or delete them as they wish - provided that they are logged in with their user credentials.
 
 <br>
 
-# INSTRUCTIONS FOR USING SITE ADMIN FUNCTION
- 
+## **Live site link:**
+Please follow this link provided to access the site - [Gamer Review Live Site](https://gamer-review-2022.herokuapp.com/)
+
 <br>
 
-# APPLICATION TESTING, VALIDATION & SEO
+## SUPERUSER SITE ADMIN FUNCTION
+This site uses Django's Admin functionality for content moderation control. The site has a Superuser with their own log in credentials.
+
+This enables the Site Admin to be able to go to the server side of the application to authorise user reviews and comments.
+
+<br>
+
+## APPLICATION TESTING, VALIDATION & SEO
 
 I have provided a seperate file for all my Test cases and outcomes. This can be found in the [TESTING.md](TESTING.md) file.
 
 <br>
 
-# BUGS & FUTURE ENHANCEMENTS
+## BUGS & FUTURE ENHANCEMENTS
 
 <br>
 
