@@ -215,6 +215,19 @@ h2 {
     margin-bottom: 2.5%;
 }
 
+.btn-form {
+    text-align: center;
+}
+
+.btn-form-2 {
+    color: #fff;
+    background-color: #047575;
+    border-radius: 25px;
+    width: 10%;
+    height: 10%;
+    padding: 1%;
+}
+
 .btn-cancel {
     color: #fff;
     position: relative;
