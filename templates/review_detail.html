@@ -26,15 +26,23 @@
 <div class="btn-editdelete">
     <a href="{% url 'delete_review' review.pk %}"><button class= "btn-home btn-lg" type="submit" action="{% url 'delete_review' review.pk %}">Delete Review</button></a>
 </div> 
-<div class="home-row">
+<!-- <div class="home-row">
     <a href="/"><button class= "btn-home btn-lg" type="submit" action="{% url 'home' %}">Back to Home</button></a>
-</div>
+</div> -->
+
+<form class="btn-form" action="/" method="get">
+    <button class="btn-form-2">Back to Home</button>
+</form>
 
 {% else %}
 
-<div class="home-row">
+<!-- <div class="home-row">
     <a href="/"><button class= "btn-home btn-lg" type="submit" action="{% url 'home' %}">Back to Home</button></a>
-</div>
+</div> -->
+
+<form class="btn-form" action="/" method="get">
+    <button class="btn-form-2">Back to Home</button>
+</form>
 
 {% endif %}
 

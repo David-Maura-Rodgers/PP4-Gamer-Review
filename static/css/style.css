@@ -70,6 +70,7 @@ h2 {
 
 .card-text {
     font-size: 22px;
+    color: black;
 }
 
 .card-body {
@@ -226,6 +227,7 @@ h2 {
     width: 10%;
     height: 10%;
     padding: 1%;
+    margin-top: 0.85%;
 }
 
 .btn-cancel {

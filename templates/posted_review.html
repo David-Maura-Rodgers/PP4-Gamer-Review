@@ -6,6 +6,10 @@
     </div>
 </div>
 
+<form class="btn-form" action="/" method="get">
+    <button class="btn-form-2">Back to Home</button>
+</form>
+
 <div class="container-fluid-home">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
@@ -14,9 +18,6 @@
 
             <h2 class="posted-h2">Please see below for a list of your views:</h2>
             <hr>
-            <div class="row">
-                <a href="/"><button class= "btn-home btn-lg" type="submit" action="{% url 'home' %}">Back to Home</button></a>
-            </div>
 
             {% endif %}
 
@@ -40,19 +41,18 @@
                     <a href="{% url 'review_detail' review.pk review.title  %}" class="review-link">
                     <h2 class="card-title-black">{{ review.game }}</h2>
                     </a>
-                    <p class="subtitle-text">{{ review.subtitle }}</p>
-                    </a>
+                    <div class="subtitle-text">{{ review.subtitle }}</div>
                     <hr/>
-                    <p class="card-text h5">{{ review.created_on}}
-                        <p class="icons">
+                    <div class="card-text">{{ review.created_on}}
+                        <div class="icons">
                         Like: <i class="fa fa-thumbs-up"></i>
                         {{ review.number_of_likes }}   
                         Funny: <i class="fa fa-smile-o"></i>
                         {{ review.number_of_funny }}   
                         Insightful: <i class="fa fa-lightbulb-o"></i>
                         {{ review.number_of_insightful }}
-                        </p>
-                    </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         
