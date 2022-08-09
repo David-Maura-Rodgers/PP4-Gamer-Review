@@ -14,7 +14,6 @@ class ReviewList(ListView):
     This view will be rendered on the home page in a list view
     that paginates every 6 entries
     """
-
     model = Review
     queryset = Review.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
@@ -26,7 +25,6 @@ class PostedReview(LoginRequiredMixin, UserPassesTestMixin, ListView):
     This renders the Posted Review page
     User can view all posts they have made
     """
-
     model = Review
     # queryset = Review.objects.filter(status=1).order_by(
     #     '-created_on')
@@ -58,7 +56,6 @@ class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     This renders the Create A Review page
     User can post a review of their own
     """
-
     model = Review
     form_class = ReviewForm
     template_name = "create_review.html"
@@ -95,7 +92,6 @@ class EditReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     Allows User to edit their reviews
     """
-
     model = Review
     form_class = ReviewForm
     template_name = "edit_review.html"
@@ -119,7 +115,6 @@ class DeleteReview(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     Allows User to delete their reviews
     """
-
     model = Review
     template_name = "delete_review.html"
     success_url = "/"
@@ -146,7 +141,6 @@ class ReviewDetail(View):
     This view will be rendered on the review detail page:
     User can see the content of posted reviews
     """
-
     def get(self, request, pk, title, *args, **kwargs):
         """
         User will be able to vote like, funny and insightful
@@ -234,7 +228,6 @@ class ReviewLike(View):
     """
     User can like a review and an icon changes to reflect that
     """
-
     def post(self, request, pk, *args, **kwargs):
         """
         User can like a review and an icon changes to reflect that
@@ -253,7 +246,6 @@ class ReviewFunny(View):
     """
     User can vote funny on a review and an icon changes to reflect that
     """
-
     def post(self, request, pk, *args, **kwargs):
         """
         User can vote funny a review and an icon changes to reflect that
@@ -272,7 +264,6 @@ class ReviewInsightful(View):
     """
     User can vote insightful on a review and an icon changes to reflect that
     """
-
     def post(self, request, pk, *args, **kwargs):
         """
         User can vote insightful a review and an icon changes to reflect that

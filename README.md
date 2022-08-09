@@ -10,20 +10,67 @@ Please follow this link provided to access the site - [Gamer Review Live Site](h
 
 <br>
 
-## SUPERUSER SITE ADMIN FUNCTION
+## SUPERUSER SITE ADMIN FUNCTION:
 This site uses Django's Admin functionality for content moderation control. The site has a Superuser with their own log in credentials.
 
 This enables the Site Admin to be able to go to the server side of the application to authorise user reviews and comments.
 
 <br>
 
-## APPLICATION TESTING, VALIDATION & SEO
-
+# APPLICATION TESTING, VALIDATION & SEO
 I have provided a seperate file for all my Test cases and outcomes. This can be found in the [TESTING.md](TESTING.md) file.
 
 <br>
 
+## Lighthouse Results:
+Please see screenshot below for Lighthouse results:
+
+![image](https://user-images.githubusercontent.com/91907661/183750218-e72105c2-ffd6-4521-a5a9-c90396205037.png)
+
+<br>
+
+## HTML
+
+All pages were run through the [w3 HTML Validator](https://validator.w3.org/)
+
+**NOTE:**
+- Due to the django templating language code used in the HTML files, these could not be copied and pasted into the validator and due to the secured views, pages with login required or a secured view cannot be validated by direct URI. 
+
+- To test the validation on the files, open the page to validate, right click and view page source. Paste the raw html code into the validator as this will be only the HTML rendered code.
+
+<br>
+
+## CSS
+All pages were run through the [w3 CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+<br>
+
+## PYTHON
+
+All pages were run through the official [Pep8](http://pep8online.com/) validator to ensure all code was pep8 compliant. 
+
+**NOTE:**
+- The AUTH_PASSWORD_VALIDATORS dictionary in settings.py has lines too long errors. I am afraid though that I have no way of correcting this.
+
+<br>
+
+## JAVASCRIPT
+JavaScript code was run through [JSHINT](https://jshint.com) javascript validator.
+
+<br>
+
+## Accessibility
+[Wave Accessibility](https://wave.webaim.org/) tool was used throughout development and for final testing of the deployed website to check for any aid accessibility testing.
+
+<br>
+
+## Responsiveness
+To be completed
+
+<br>
+
 ## BUGS & FUTURE ENHANCEMENTS
+To be completed
 
 <br>
 
@@ -192,6 +239,7 @@ I have set up whitenoise so that my static files are served in deployment. I hav
 - Complete readme documentation
 - Complete testing documentation write up
 
+<br>
 
 # WIREFRAMES:
 Below I will provide wireframes to illustrate how I thought each page would appear.
@@ -224,8 +272,9 @@ The Edit page will very much resemble the Create A Review page, but the function
 
 The Delete page functions as you would expect, and will just ask the user to delete the selected review or cancel and go back to previous page.
 
-### Database-Design
+<br>
 
+# Database Design and ERD
 The purpose of the database is to make CRUD functionlaity available to the user. The Review model is at the heart of this - it provides the framework from which the user interacts with the site, with all the most relevant aspects related to creating a game review.
 
 The next model is the Comments model, which allows community engagement among registered users to leave comments for one another's review posts.
@@ -238,7 +287,7 @@ Entity relationship diagram was created using [DBVisualizer](https://www.dbvis.c
 
 <br>
 
-### Security
+## Security
 I have used using the UserPassesTextMixin and LoginRequiredMixin within the Django class based views.
 Restricted functionality such as edit and delete functionality listed in the features was secured using this method.
 

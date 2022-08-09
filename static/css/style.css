@@ -68,10 +68,10 @@ h2 {
     padding-bottom: 50px;
 }
 
-card-img-top {
-    height: 300px;
-    height: 300px;
-}
+/* img {
+    height: 50%;
+    width: 50%;
+} */
 
 .card-body {
     padding: 5px;
