@@ -13,55 +13,59 @@
 
 <div class="container-fluid-home">
 
-        {% if user.is_authenticated %}
+    {% if user.is_authenticated %}
 
-        <h2 class="posted-h2">Please edit your review using the form below:</h2>
-        <hr>
-        
-        <div class="home-button">
-            <a href="/posted_review/"><button class= "btn-home btn-lg" type="submit" action="{% url 'posted_review' %}">Cancel</button></a>
-        </div>
-        <hr>
-        
-        <div class="create-form">
-            <div class="card-body">
-                <div class="create-text">
-
-                    {% if user.is_authenticated %}
-
-                    <p>Reposting as Gamer: {{ user.username }}</p>
-                    <h4>{{ review.title }}</h4>
-                    <h4>{{ review.game }}</h4>
-                    <form class="form-inner" method="post">
-                        {{ form | crispy }}
-                        {% csrf_token %}
-                        <hr>
-                        <button type="submit" class="btn btn-signup btn-lg" aria-label="submit">Submit Changes</button>
-                    </form>
-                </div> 
-                    {% endif %}
-            </div>
-        </div>
-            
-        {% endif %}
-
-        {% if is_paginated %}
-
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
+    <h2 class="posted-h2">Please edit your review using the form below:</h2>
+    <hr>
     
-                {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+    <!-- <div class="home-button">
+        <a href="/posted_review/"><button class= "btn-home btn-lg" type="submit" action="{% url 'posted_review' %}">Cancel</button></a>
+    </div> -->
+
+    <form class="btn-form" action="/" method="get">
+        <button class="btn-form-2">Back to Home</button>
+    </form>
+    <hr>
+    
+    <div class="create-form">
+        <div class="card-body">
+            <div class="create-text">
+
+                {% if user.is_authenticated %}
+
+                <p>Reposting as Gamer: {{ user.username }}</p>
+                <h4>{{ review.title }}</h4>
+                <h4>{{ review.game }}</h4>
+                <form class="form-inner" method="post">
+                    {{ form | crispy }}
+                    {% csrf_token %}
+                    <hr>
+                    <button type="submit" class="btn btn-signup btn-lg" aria-label="submit">Submit Changes</button>
+                </form>
+            </div> 
                 {% endif %}
-    
-                {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-                {% endif %}
-                
-            </ul>
-        </nav>
-    
-        {% endif %}
+        </div>
     </div>
+        
+    {% endif %}
+
+    {% if is_paginated %}
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            {% endif %}
+            
+        </ul>
+    </nav>
+
+    {% endif %}
 </div>
+
 {% endblock %}
