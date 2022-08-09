@@ -35,8 +35,8 @@
     <button class="btn-form-2">Delete Review</button>
 </form>
 
-<form class="btn-form" action="/" method="get">
-    <button class="btn-form-2">Back to Home</button>
+<form class="btn-form" action="{% url 'posted_review' %}" method="get">
+    <button class="btn-form-2">Back to Your Reviews</button>
 </form>
 
 {% else %}

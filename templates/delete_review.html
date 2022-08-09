@@ -9,22 +9,31 @@
     </div>
 </div>
 
-<!-- Review confirm delete form -->
-<div class="form-style text-center p-3 m-3">
-    <h1 class="text-center">Confirm Review Deletion</h1>
-    <form method="post">
-        {% csrf_token %}
-        <h5>Are you sure you want to delete this review?</h5> 
-        <hr>  
-        <h4>{{ review.title }}</h4>
-        <h4>{{ review.game }}</h4>
-        <hr>
-        <input type="submit" value="Confirm Delete" class="btn btn-signup btn-lg" aria-label="confirm">
-    </form>
-</div>
+<div class="container-fluid-home">
 
-<div class="btn-cancel">
-    <a href="/posted_review/"><button class= "btn-home btn-lg" type="submit" action="{% url 'posted_review' %}">Cancel Delete</button></a>
+    <!-- Review confirm delete form -->
+    <div class="form-style text-center p-3 m-3">
+        <h1 class="text-center">Confirm Review Deletion</h1>
+        <form method="post">
+            {% csrf_token %}
+            <h5>Are you sure you want to delete this review?</h5> 
+            <hr>  
+            <h4>{{ review.title }}</h4>
+            <h4>{{ review.game }}</h4>
+            <hr>
+            <input type="submit" value="Confirm Delete" class="btn btn-signup btn-lg" aria-label="confirm">
+        </form>
+    </div>
+
+    <!-- <div class="btn-cancel">
+        <a href="/posted_review/"><button class= "btn-home btn-lg" type="submit" action="{% url 'posted_review' %}">Cancel Delete</button></a>
+    </div> -->
+    <div>
+        <form class="btn-form" action="{% url 'posted_review' %}" method="get">
+            <button class="btn-form-2">Back to your Reviews</button>
+        </form>
+    </div>
+
 </div>
 
 {% endblock %}
