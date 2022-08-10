@@ -5,6 +5,7 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
 CONSOLE = (
+    ('default', 'Please Select Console'),
     ('PS5', 'PS5'),
     ('PS4', 'PS4'),
     ('XBOX', 'XBOX'),
@@ -21,7 +22,8 @@ class Review(models.Model):
     gamer = models.ForeignKey(User, on_delete=models.CASCADE, blank=False)
     game = models.CharField(max_length=100, blank=False)
     subtitle = models.CharField(max_length=100, blank=True, default='')
-    console = models.CharField(max_length=4, choices=CONSOLE, default='')
+    console = models.CharField(
+        max_length=30, choices=CONSOLE, default='')
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
