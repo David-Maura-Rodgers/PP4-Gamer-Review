@@ -317,5 +317,6 @@ The html elements of this page have largely been constructed using Bootstrap.
 - I was trying to use slugs in base.html
 - no lang attribute for html class. Has now been added with "en" value
 - some of the hr lines appear slighty thicker than other in places
+- Button inside anchor tags that needed to be changed to forms to be compliant
 
 <br>
