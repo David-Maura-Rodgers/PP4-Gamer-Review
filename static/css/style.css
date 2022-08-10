@@ -79,6 +79,10 @@ h2 {
     font-size: 22px;
 }
 
+i {
+    font-size: 22px;
+}
+
 .card {
     border: none;
     background-color: transparent;
@@ -86,7 +90,7 @@ h2 {
 }
 
 .card-text {
-    font-size: 22px;
+    font-size: 18px;
     color: black;
     font-family: Oswald, sans-serif;
 }
@@ -172,7 +176,7 @@ h2 {
 }
 
 .review-text {
-    font-weight: 800;
+    font-weight: 600;
     font-family: Oswald, sans-serif;
 }
 
