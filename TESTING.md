@@ -284,3 +284,22 @@ User should be able to click on all links and buttons as described in the steps 
 Actual:
 
 User can click on all links and buttons as described in the steps above and they work as intended
+
+<hr>
+<br>
+
+**Description:**
+
+**All social media footer icon links work as intended**
+
+Steps:
+1. Ensure site user is logged in
+2. Click all icon links in footer to ensure they direct user as intended
+
+Expected:
+
+User should be able to click on all icon links in the footer as described in the steps above and work as intended
+
+Actual:
+
+User can click on icon links in the footer as described in the steps above and they work as intended
