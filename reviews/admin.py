@@ -2,16 +2,18 @@ from django.contrib import admin
 from .models import Review, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
+# was SummernoteModelAdmin
+# summernote_fields = ("content",)
+
 
 @admin.register(Review)
-class ReviewAdmin(SummernoteModelAdmin):
+class ReviewAdmin(admin.ModelAdmin):
     '''
     Admin panel for review posts
     '''
-    list_display = ("title", "status", "created_on")
-    search_fields = ["title", "content"]
-    list_filter = ("status", "created_on")
-    summernote_fields = ("content",)
+    list_display = ('title', 'status', 'console', 'created_on', 'updated_on')
+    search_fields = ['title', 'content']
+    list_filter = ('status', 'created_on', 'updated_on')
 
 
 @admin.register(Comment)

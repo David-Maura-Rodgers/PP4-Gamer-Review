@@ -4,6 +4,8 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
+EDIT = ((0, 'Not Approved'), (1, 'Approved'))
+
 CONSOLE = (
     ('default', 'Please Select Console'),
     ('PS5', 'PS5'),
@@ -25,6 +27,7 @@ class Review(models.Model):
     console = models.CharField(
         max_length=30, choices=CONSOLE, default='')
     content = models.TextField()
+    edit = models.IntegerField(choices=EDIT, default=0)
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

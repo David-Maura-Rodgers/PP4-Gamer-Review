@@ -13,11 +13,6 @@
     <h1 class="create-title">Please use the form below to create your own Review:</h1>
 </div>
 
-<!-- <div class="row">
-    <a href="/"><button class= "btn-home btn-lg" type="submit">Back to Home</button>
-    </a>
-</div> -->
-
 <form class="btn-form" action="/" method="get">
     <button class="btn-form-2">Back to Home</button>
 </form>
@@ -31,7 +26,7 @@
 
                 <h3>Post your review using the form below:</h3>
                 <hr>
-                
+
                 <div class="format-text">In order to create paragraphs, please type the letters <strong>br </strong> 
                     within <strong>angle brackets</strong>
                 </div>
@@ -41,7 +36,7 @@
                     {{ form | crispy }}
                     {% csrf_token %}
                     <hr>
-                    <button type="submit" action="{% url 'posted_review' %}" class="btn btn-signup btn-lg" aria-label="submit">Submit Review</button>
+                    <button type="submit" class="btn btn-signup btn-lg" aria-label="submit">Submit Review</button>
                 </form>
             </div> 
                 
