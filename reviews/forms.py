@@ -24,3 +24,15 @@ class ReviewForm(forms.ModelForm):
         '''
         model = Review
         fields = ('title', 'game', 'subtitle', 'content',)
+
+
+class ConsoleForm(forms.ModelForm):
+    '''
+    Users can choose console from drop down
+    '''
+    class Meta:
+        '''
+        Model and fields needed for console drop down
+        '''
+        model = Review
+        fields = ('console',)

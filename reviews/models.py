@@ -4,6 +4,14 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+CONSOLE = (
+    ('PS5', 'PS5'),
+    ('PS4', 'PS4'),
+    ('XBOX', 'XBOX'),
+    ('NDS', 'NDS'),
+    ('PC', 'PC'),
+)
+
 
 class Review(models.Model):
     """
@@ -12,10 +20,10 @@ class Review(models.Model):
     title = models.CharField(max_length=100, blank=False)
     gamer = models.ForeignKey(User, on_delete=models.CASCADE, blank=False)
     game = models.CharField(max_length=100, blank=False)
-    subtitle = models.CharField(max_length=100, blank=True)
+    subtitle = models.CharField(max_length=100, blank=True, default="------")
+    console = models.CharField(max_length=4, choices=CONSOLE, default='')
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
-    featured_image = CloudinaryField("image", default="placeholder")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(

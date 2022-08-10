@@ -314,7 +314,8 @@ The html elements of this page have largely been constructed using Bootstrap.
 ### **Bugs & Known Issues**
 - In the commit history there may appear to be some issues with my env.py file. I may have commited to early without having done this properly.
 - Again, with the env.py file, my database on Heroku became corrupted so I had to generate new a new Postges database key varaible
-
-
+- I was trying to use slugs in base.html
+- no lang attribute for html class. Has now been added with "en" value
+- some of the hr lines appear slighty thicker than other in places
 
 <br>
