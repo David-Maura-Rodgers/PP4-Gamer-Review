@@ -31,6 +31,11 @@
 
                 <h3>Post your review using the form below:</h3>
                 <hr>
+                
+                <div class="format-text">In order to create paragraphs, please type the letters <strong>br </strong> 
+                    within <strong>angle brackets</strong>
+                </div>
+            
                 <p>Posting as Gamer: {{ user.username }}</p>
                 <form class="form-inner" method="post" enctype="multipart/form-data">
                     {{ form | crispy }}

@@ -319,5 +319,6 @@ The html elements of this page have largely been constructed using Bootstrap.
 - some of the hr lines appear slighty thicker than other in places
 - Button inside anchor tags that needed to be changed to forms to be compliant
 - Submit Changes button won't go back to Your Reviews page, instead goes back to Home page
+- User has to be told to use br html tags to create paragraphs in create a review and edit review forms
 
 <br>

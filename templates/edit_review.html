@@ -30,11 +30,16 @@
                 <h4>{{ review.title }}</h4>
                 <h4>{{ review.game }}</h4>
                 <hr>
+
+                <div class="format-text">In order to create paragraphs, please type the letters <strong>br </strong> 
+                    within <strong>angle brackets</strong>
+                </div>
+
                 <form class="form-inner" method="post">
                     {{ form | crispy }}
                     {% csrf_token %}
                     <hr>
-                    <button type="submit" action="{% url 'posted_review' %}" class="btn btn-signup btn-lg" aria-label="submit">Submit Changes</button>
+                    <button type="submit" class="btn btn-signup btn-lg" aria-label="submit">Submit Changes</button>
                 </form>
             </div> 
                 {% endif %}
