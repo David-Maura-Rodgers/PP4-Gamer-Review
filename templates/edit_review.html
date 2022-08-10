@@ -3,13 +3,10 @@
 
 {{ form.media }}
 
-<!-- https://startbootstrap.com/snippets/full-image-header -->
 <div class="masthead">
     <div class="container h-100">
     </div>
 </div>
-
-<!-- https://startbootstrap.com/snippets/full-image-header -->
 
 <div class="container-fluid-home">
 
@@ -17,10 +14,6 @@
 
     <h2 class="posted-h2">Please edit your review using the form below:</h2>
     <hr>
-    
-    <!-- <div class="home-button">
-        <a href="/posted_review/"><button class= "btn-home btn-lg" type="submit" action="{% url 'posted_review' %}">Cancel</button></a>
-    </div> -->
 
     <form class="btn-form" action="/" method="get">
         <button class="btn-form-2">Back to Home</button>
@@ -41,7 +34,7 @@
                     {{ form | crispy }}
                     {% csrf_token %}
                     <hr>
-                    <button type="submit" class="btn btn-signup btn-lg" aria-label="submit">Submit Changes</button>
+                    <button type="submit" action="{% url 'posted_review' %}" class="btn btn-signup btn-lg" aria-label="submit">Submit Changes</button>
                 </form>
             </div> 
                 {% endif %}

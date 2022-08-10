@@ -88,6 +88,7 @@ h2 {
 .card-text {
     font-size: 22px;
     color: black;
+    font-family: Oswald, sans-serif;
 }
 
 .card-body {
@@ -97,10 +98,6 @@ h2 {
 
 .card-body-comments {
     margin-bottom: 0.5%;
-}
-
-.create-form {
-    text-align: center;
 }
 
 .review-content {
@@ -117,9 +114,14 @@ h2 {
     clear: both;
 }
 
+.create-form {
+    text-align: center;
+}
+
 .form-inner {
     margin-left: 17%;
     margin-right: 17%;
+    font-family: Oswald, sans-serif;
 }
 
 .subtitle-text {
@@ -129,6 +131,7 @@ h2 {
 
 .create-text {
     font-size: 22px;
+    font-family: Oswald, sans-serif;
 }
 
 .console-text {
@@ -170,6 +173,7 @@ h2 {
 
 .review-text {
     font-weight: 800;
+    font-family: Oswald, sans-serif;
 }
 
 .image-container {
@@ -316,6 +320,19 @@ h2 {
     color: rgb(103, 22, 22);
 }
 
+@media screen and (max-width: 992px) {
+
+    .btn-form-2 {
+        color: #fff;
+        background-color: #047575;
+        border-radius: 25px;
+        width: 30%;
+        height: 30%;
+        padding: 1%;
+        margin-top: 0.85%;
+        }
+    }
+
 @media screen and (max-width: 576px) {
 
 .btn-form-2 {
@@ -326,35 +343,18 @@ h2 {
     height: 30%;
     padding: 1%;
     margin-top: 0.85%;
+    }
 }
 
 @media screen and (max-width: 320px) {
 
     .btn-form-2 {
-        color: #fff;
-        background-color: #047575;
-        border-radius: 25px;
-        width: 35%;
-        height: 35%;
-        padding: 1%;
-        margin-top: 0.85%;
+    color: #fff;
+    background-color: #047575;
+    border-radius: 25px;
+    width: 35%;
+    height: 35%;
+    padding: 1%;
+    margin-top: 0.85%;
     }
-
-/* @media screen and (max-width: 1200px) {
-    
-    .panel-heading {
-        max-width: 100px;
-    }
-
-    .note-dropzone {
-        max-width: 100px;
-    }
-
-    .note-editor {
-        max-width: 100px;
-    }
-
-    .note-toolbar {
-        max-width: 100px;
-    }
-} */
+}
