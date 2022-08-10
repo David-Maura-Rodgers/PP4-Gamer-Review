@@ -108,19 +108,19 @@ h2 {
     color: #143357;
 }
 
+.create-text {
+    font-size: 22px;
+}
+
 .console-text {
     font-size: 22px;
     color: #143357;
-    background: linear-gradient(rgba(220, 225, 230, 0.527), transparent),
-                linear-gradient(to top left, rgb(230, 195, 125), transparent),
-                linear-gradient(to top right, rgb(133, 70, 11), transparent);
+    background: linear-gradient(rgba(220, 225, 230, 0.774), transparent),
+                linear-gradient(to top left, rgb(230, 195, 155), transparent),
+                linear-gradient(to top right, rgb(133, 70, 60), transparent);
     background-blend-mode: screen;
     padding: 4px;
     border-radius: 25px;
-}
-
-.create-text {
-    font-size: 22px;
 }
 
 .create-title {
@@ -133,9 +133,9 @@ h2 {
 }
 
 .card-title-black {
-    background: linear-gradient(rgba(220, 225, 230, 0.527), transparent),
-                linear-gradient(to top left, rgb(230, 195, 125), transparent),
-                linear-gradient(to top right, rgb(133, 70, 11), transparent);
+    background: linear-gradient(rgba(220, 225, 230, 0.774), transparent),
+                linear-gradient(to top left, rgb(230, 195, 155), transparent),
+                linear-gradient(to top right, rgb(133, 70, 60), transparent);
     background-blend-mode: screen;
     color: black;
     padding: 4px;
@@ -144,7 +144,7 @@ h2 {
 
 .card-title-black:hover,
 .card-title-black:active {
-    background-color:rgb(211, 38, 38);
+    background-color:rgb(37, 0, 54);
     color: #fff;
     border: solid black 2px;
 }
@@ -317,7 +317,7 @@ h2 {
 }
 
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
     
     .panel-heading {
         max-width: 100px;
@@ -334,4 +334,4 @@ h2 {
     .note-toolbar {
         max-width: 100px;
     }
-}
+} */
