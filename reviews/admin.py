@@ -11,9 +11,9 @@ class ReviewAdmin(admin.ModelAdmin):
     '''
     Admin panel for review posts
     '''
-    list_display = ('title', 'status', 'console', 'created_on', 'updated_on')
-    search_fields = ['title', 'content']
-    list_filter = ('status', 'created_on', 'updated_on')
+    list_display = ('title', 'gamer', 'status', 'created_on', 'updated_on')
+    search_fields = ['title', 'gamer', 'content']
+    list_filter = ('status', 'gamer', 'created_on', 'updated_on')
 
 
 @admin.register(Comment)

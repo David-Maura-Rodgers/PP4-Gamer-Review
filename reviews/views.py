@@ -26,8 +26,6 @@ class PostedReview(LoginRequiredMixin, UserPassesTestMixin, ListView):
     User can view all posts they have made
     """
     model = Review
-    # queryset = Review.objects.filter(status=1).order_by(
-    #     '-created_on')
     template_name = "posted_review.html"
     paginate_by = 6
 
@@ -77,8 +75,6 @@ class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         """
         form.instance.gamer = self.request.user
         form.save()
-        # form.instance.review.set([self.request.user.pk])
-        # self.success_url = "/posted_review/"
 
         messages.success(
             self.request,
@@ -108,7 +104,10 @@ class EditReview(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         """
         Function: test if user(gamer) is authenticated
         """
-        return self.request.user == self.get_object().gamer
+        if self.request.user.is_authenticated:
+            return True
+        else:
+            return False
 
 
 class DeleteReview(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
