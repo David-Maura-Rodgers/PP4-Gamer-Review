@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@500&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&display=swap');
 
-/* https://stackoverflow.com/questions/14735274/bootstrap-css-hides-portion-of-container-below-navbar-navbar-fixed-top */
 body {
     font-family: Oswald, sans-serif;
     background-color: #F9FAFC;
@@ -9,8 +8,6 @@ body {
     border: none; 
 }
 
-/* https://startbootstrap.com/snippets/full-image-header */
-/* https://unsplash.com/photos/npxXWgQ33ZQ */
 .masthead {
     height: 34vh;
     min-height: 240px;
@@ -321,7 +318,6 @@ i {
     text-align: center;
 }
 
-/* https://stackoverflow.com/questions/57625331/changing-social-media-icon-color */
 .footer-text > a[href*="facebook"] {
     color: rgb(103, 22, 22);
 }

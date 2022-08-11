@@ -1,12 +1,7 @@
 # GAMER REVIEWS - README
  
 ## PURPOSE OF THIS SITE:
-Gamer Reviews is a site dedicated to gamers who would like to post their own reviews of games they have been playing. The user or gamer in this case, can post their own reviews, which are subject to authorisation by the site Admin. Once approved, the user can then view the reviews they have posted to the site and edit or delete them as they wish - provided that they are logged in with their user credentials.
-
-<br>
-
-## **Live site link:**
-Please follow this link provided to access the site - [Gamer Review Live Site](https://gamer-review-2022.herokuapp.com/)
+Gamer Reviews is a site dedicated to gamers who would like to post their own reviews of games they have been playing. The user or gamer in this case, can post their own reviews, which are subject to authorisation by the Site Admin. Once approved, the user can then view the reviews they have posted to the site and edit or delete them as they wish - provided that they are logged in with their user credentials.
 
 <br>
 
@@ -16,6 +11,12 @@ This site uses Django's Admin functionality for content moderation control. The 
 This enables the Site Admin to be able to go to the server side of the application to authorise user reviews and comments.
 
 The Admin panel can be access simply from the home page. You can navigate to it by clicking in URL bar, hit / (forward slash) on keyboard and type admin. Like so: **/admin** and hit **enter**
+
+**NOTE:**
+- During the development of this project, I posted several test review posts. This was done to test the functionality of the **Create Review**, **Edit Review** and **Delete Review** functions. 
+- **(All of the review content is simply just placeholder text used to test the functionality of content display for site)**
+- Site user can use all the function on the front end providing they are the author of the review post
+- Site Admin can do all of the above from the admin panel
 
 <br>
 
@@ -122,7 +123,7 @@ The following sections will explain the focus of each epic and the order in whic
 
 **EPIC 1 - Basic Setup**
 
-Install all libraries and dependencies need for the project - gunicorn, dj_database_url, psycopg2, dj3-cloudinary-storage, django-summernote, django-allauth, django-crispy-forms
+Install all libraries and dependencies need for the project - gunicorn, dj_database_url, psycopg2, django-summernote, django-allauth, django-crispy-forms
 
 <br>
 
@@ -316,7 +317,7 @@ The html elements of this page have largely been constructed using Bootstrap.
 
 <br>
 
-# BUGS & FUTURE ENHANCEMENTS
+# BUGS & FUTURE ENHANCEMENTS/FEATURES
 
 ### **Bugs & Known Issues**
 - In the commit history there may appear to be some issues with my env.py file. I may have commited to early without having done this properly.
@@ -328,11 +329,56 @@ The html elements of this page have largely been constructed using Bootstrap.
 - Submit Changes button won't go back to Your Reviews page, instead goes back to Home page
 - User has to be told to use br html tags to create paragraphs in create a review and edit review forms
 
+<br>
+
 ### **Future features and enchancements**
 - Users can see a preview of their post before hitting the Submit button
 - User will be able to submit their own photos instead of the one which appears as default
 - User can use a seach function which searches for strings (for game names, as example)
 - User can search for all reviews that are reviewed on a particular console (controlled by the drop down menu choices)
 - I wanted to implement the summernote panel on the front end, however, I tried several times to make the note panel repsonsive to screen width changes. Unfortunately, I had no more time to get this fixed and had to abandon the idea.
+- Contact Us page could be added for site user to contact the Site Admin
 
 <br>
+
+# Deployment
+
+## Heroku Deployment
+
+I have deployed this site to [Heroku](https://id.heroku.com/login). Steps for deployments are outlined as below:
+
+- Navigate to heroku and create an account
+- Click the new button in the top right corner
+- Select create new app
+- Enter app name
+- Select region and click create app
+- Click the resources tab and search for Heroku Postgres and click to connect
+- Go to the settings tab and click reveal config vars
+- Add the following config vars:
+  - SECRET_KEY: (Your secret key)
+  - DATABASE_URL: (This is provided with Postgres)
+  - PORT: 8000
+- Click the deploy tab
+- Scroll down to Connect to GitHub and sign in / authorize when prompted
+- In the search box, find the repositoy you want to deploy and click connect
+- Scroll down to Manual deploy and choose the main branch
+- Click deploy
+
+## **Live site link:**
+Please follow this link provided to access the site - [Gamer Review - Live Site](https://gamer-review-2022.herokuapp.com/)
+
+<br>
+
+# Credits 
+I would like to thank [Gareth McGirr](https://github.com/Gareth-McGirr) for going through a coding session with me in order to help with some of the structure and planning for the Edit and Delete functions of my site. His experience and insight was very helpful and very much appreciated.
+
+## Images
+PP4-Gamer.jpg was taken from [Pixabay](https://pixabay.com/photos/games-gaming-consoles-ps4-gamepad-2453777/)
+
+
+Masthead image taken from [Unsplash](https://unsplash.com/photos/npxXWgQ33ZQ)
+
+## Code
+CSS code for Masthead taken from [Start Bootstrap](https://startbootstrap.com/snippets/full-image-header)
+
+CSS Code for social media icon colours: [Stack Overflow](https://stackoverflow.com/questions/57625331/changing-social-media-icon-color)
