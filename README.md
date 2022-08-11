@@ -381,4 +381,7 @@ Masthead image taken from [Unsplash](https://unsplash.com/photos/npxXWgQ33ZQ)
 ## Code
 CSS code for Masthead taken from [Start Bootstrap](https://startbootstrap.com/snippets/full-image-header)
 
+CCS code for static Masthead image rendering taken from [Stack Overflow](https://stackoverflow.com/questions/57625331/changing-social-media-icon-color)
+
 CSS Code for social media icon colours: [Stack Overflow](https://stackoverflow.com/questions/57625331/changing-social-media-icon-color)
+
