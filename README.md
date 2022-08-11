@@ -30,11 +30,11 @@ The user is able to view any review they like by clicking the Game Title Text wi
 
 <br>
 
-![image](https://user-images.githubusercontent.com/91907661/182706010-6c982ecc-de34-4ba5-82ca-4e5c878bcc2a.png)
+![image](https://user-images.githubusercontent.com/91907661/184168917-c3118b43-f99f-433e-b3dc-84611833e738.png)
 
 <br>
 
-![image](https://user-images.githubusercontent.com/91907661/182707384-2797637d-d948-46be-ad47-174270d09394.png)
+![image](https://user-images.githubusercontent.com/91907661/184169802-9964464f-629e-4e56-b05a-de9e65a0bcff.png)
  
 <br>
 
@@ -43,7 +43,7 @@ If the user would like to register, they can click the link to do so and then th
 
 <br>
 
-![image](https://user-images.githubusercontent.com/91907661/182706542-bd14bbe3-90aa-408f-b792-44abed28a999.png)  
+![image](https://user-images.githubusercontent.com/91907661/184170135-64e83c21-c1ab-480a-974e-f3c8cb482242.png)  
  
  
 ## Create a Review:
@@ -51,7 +51,7 @@ Once the user is logged in, they can post a review to be authorised for publishi
  
 They have four fields to complete, 3 of which are mandatory. If these 3 fields - Title, Game, Content are not filled in, an on screen prompt will appear informing the site user.
  
-![image](https://user-images.githubusercontent.com/91907661/182711196-7b14e81e-71c3-4c6e-840d-516296e2d734.png)
+![image](https://user-images.githubusercontent.com/91907661/184175307-18f31d5a-eef9-4582-8de8-945b9ad22208.png)
  
 <br>
 
@@ -60,7 +60,7 @@ Once the user is logged in, they can view the list of reviews they posted, but o
  
 Importantly, this list only contains the reviews the user themselves have posted. The relevance of this will be explained further on.
  
-![image](https://user-images.githubusercontent.com/91907661/182710143-425b5f85-1d85-4e8a-ace4-0c588c3fb7c6.png)
+![image](https://user-images.githubusercontent.com/91907661/184170861-82080a21-ed20-45bc-b076-7b22a3b656d7.png)
  
 <br>
 
@@ -71,7 +71,7 @@ The review title, game and subtitle are displayed along with the date the review
  
 <br>
 
-![image](https://user-images.githubusercontent.com/91907661/183266457-3ba44111-d95d-4c95-8ec0-05365355ff9b.png)
+![image](https://user-images.githubusercontent.com/91907661/184171453-321885d0-e89d-44e1-a5d8-70892dc9bb5f.png)
 
 <br>
  
@@ -81,22 +81,22 @@ They can also view any comments made by other users or they can post a comment o
  
 <br>
 
-![image](https://user-images.githubusercontent.com/91907661/182712764-214a9217-b6af-443d-be3a-ae6eda126a59.png)
+![image](https://user-images.githubusercontent.com/91907661/184171732-50beaa13-91b4-442f-9817-df8e4df7d13d.png)
 
 <br>
  
 ## Edit and Delete Reviews:
 From the Your Reviews page - The user can also choose to edit or delete their own reviews. As shown below:
  
-![image](https://user-images.githubusercontent.com/91907661/182714588-c94bce8d-75b5-4fcc-b4c2-0459fdcef515.png)
+![image](https://user-images.githubusercontent.com/91907661/184172205-01aa3b3d-6cb2-437f-af73-31fc9ebd3e75.png)
  
 If they select edit or delete, they will be taken to the appropriate pages as hown below:
  
-![image](https://user-images.githubusercontent.com/91907661/183263526-7a365c86-67ea-4868-8efb-0081ba6313ab.png)
+![image](https://user-images.githubusercontent.com/91907661/184172672-04e7bdd7-9a72-45fd-a80b-d8bb3cab85bd.png)
 
 <br>
 
-![image](https://user-images.githubusercontent.com/91907661/182715380-98a0b481-3920-4082-a745-401108d62b43.png)
+![image](https://user-images.githubusercontent.com/91907661/184173104-b59f5b2a-248f-4556-b8bd-547fc92e5d2f.png)
 
 <br>
  
@@ -105,7 +105,7 @@ As mentioned above, it is important that the user who is logged in can only see 
 
 <br>
 
-![image](https://user-images.githubusercontent.com/91907661/183266381-2b432e01-a024-4ac9-b60e-fadd4a39fd87.png)
+![image](https://user-images.githubusercontent.com/91907661/184173537-366e0dba-f8b7-405f-b85e-f8d521958275.png)
 
 <br>
 
@@ -167,7 +167,7 @@ This Epic focused on interactivity and more dynamic parts of the app.
 
 <br>
 
-**EPIC 6 - Submit, edit and delete Reviews**
+**EPIC 6 - Submit, Edit and Delete Reviews**
 
 This part of the project was the most time consuming but essential components of the site. 3 key features are as follows:
 
@@ -225,7 +225,7 @@ All pages will be fully responsive to all pixel sizes and the nav menu will beco
 
 <br>
 
-### Edit and Delete Review:
+## Edit and Delete Review:
 
 The Edit page will very much resemble the Create A Review page, but the functionality here will be to edit what has been posted by the user previously.
 
@@ -262,7 +262,7 @@ I have provided a seperate file for all my Test cases and outcomes. This can be 
 ## Lighthouse Results:
 Please see screenshot below for Lighthouse results:
 
-![image](https://user-images.githubusercontent.com/91907661/183750218-e72105c2-ffd6-4521-a5a9-c90396205037.png)
+![image](https://user-images.githubusercontent.com/91907661/184167971-f94ed22d-b74a-44ec-8fe5-4ade2d1869d1.png)
 
 <br>
 
@@ -311,7 +311,7 @@ JavaScript code was run through [JSHINT](https://jshint.com) javascript validato
 The html elements of this page have largely been constructed using Bootstrap. 
 - I have used Inspect option to go through reponsiveness of all pages:
 
-![Responsiveness](https://user-images.githubusercontent.com/91907661/184003377-1d6c299b-67e3-4a2a-886a-102786788d35.png)
+![image](https://user-images.githubusercontent.com/91907661/184174549-f19ac205-ec31-4b2f-95b9-9972a047b061.png)
 
 - Site should be responsive and functional on all devices from 320px up
 - Hamburger menu appears for mobile devices
