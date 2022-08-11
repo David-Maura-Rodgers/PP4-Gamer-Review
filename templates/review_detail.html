@@ -62,7 +62,6 @@
 
                 <div class="row">
                     <div class="col-2">
-                        <strong>
 
                             <!-- Checks that user is authenticated and can access the icons to upvote -->
                             {% if user.is_authenticated %}
@@ -74,13 +73,13 @@
                                 {% if liked %}
 
                                 <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like" 
-                                aria-label="vote like button" alt="vote like button">
+                                aria-label="vote like button" title="vote like button">
                                     <i class="fas fa-thumbs-up"></i></button>
 
                                 {% else %}
 
                                 <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like" 
-                                aria-label="vote like button" alt="vote like button">
+                                aria-label="vote like button" title="vote like button">
                                     <i class="far fa-thumbs-up"></i></button>
 
                                 {% endif %}
@@ -94,11 +93,9 @@
 
                             <!-- displays total number of likes for a post -->
                             <span class="text-secondary">{{ review.number_of_likes }}</span>
-                        </strong>
                     </div>
 
                     <div class="col-2">
-                        <strong>
 
                             <!-- Checks that user is authenticated and can access the icons to upvote -->
                             {% if user.is_authenticated %}
@@ -110,13 +107,13 @@
                                 {% if funny %}
 
                                 <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like" 
-                                aria-label="vote like funny" alt="vote funny button">
+                                aria-label="vote like funny" title="vote funny button">
                                     <i class="fa fa-smile-o"></i></button>
 
                                 {% else %}
 
                                 <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like" 
-                                aria-label="vote like funny" alt="vote funny button">
+                                aria-label="vote like funny" title="vote funny button">
                                     <i class="fa fa-smile-o"></i></button>   
 
                                 {% endif %}
@@ -130,11 +127,9 @@
 
                             <!-- displays total number of funny votes for a post -->
                             <span class="text-secondary">{{ review.number_of_funny }}</span>
-                        </strong>
                     </div>
 
                     <div class="col-2">
-                        <strong>
 
                             <!-- Checks that user is authenticated and can access the icons to upvote -->
                             {% if user.is_authenticated %}
@@ -146,13 +141,13 @@
                                 {% if insightful %}
 
                                 <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like" 
-                                aria-label="vote insightful button" alt="vote insightful button">
+                                aria-label="vote insightful button" title="vote insightful button">
                                     <i class="fa fa-lightbulb-o"></i></button>
 
                                 {% else %}
     
                                 <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like" 
-                                aria-label="vote insightful button" alt="vote insightful button">
+                                aria-label="vote insightful button" title="vote insightful button">
                                     <i class="fa fa-lightbulb-o"></i></button> 
 
                                 {% endif %}
@@ -166,7 +161,6 @@
 
                             <!-- displays total number of insightful votes for a post -->
                             <span class="text-secondary">{{ review.number_of_insightful }}</span>
-                        </strong>
                     </div>
 
                     <div class="col-2">
