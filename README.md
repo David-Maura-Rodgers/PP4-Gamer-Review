@@ -14,9 +14,10 @@ The Admin panel can be access simply from the home page. You can navigate to it 
 
 **NOTE:**
 - During the development of this project, I posted several test review posts. This was done to test the functionality of the **Create Review**, **Edit Review** and **Delete Review** functions. 
+- You will also find some comments visable in the review detail, this was also done to test comment functionality.
 - **(All of the review content is simply just placeholder text used to test the functionality of content display for site)**
-- Site user can use all the function on the front end providing they are the author of the review post
-- Site Admin can do all of the above from the admin panel
+- Site user can use all the function on the front end providing they are the author of the review post.
+- Site Admin can do all of the above from the admin panel.
 
 <br>
 
