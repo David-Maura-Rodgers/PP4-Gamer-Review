@@ -187,29 +187,41 @@ I have set up whitenoise so that my static files are served in deployment. I hav
 <br>
 
 # WIREFRAMES:
-Below I will provide wireframes to illustrate how I thought each page would appear.
+Below I will provide wireframes to illustrate how I thought each page would appear. These wireframe were created using [Figma](https://www.figma.com/)
 
 All pages will be fully responsive to all pixel sizes and the nav menu will become a burger icon for smaller resolutions
+
+<br>
 
 ### Home Page:
 
 ![image](https://user-images.githubusercontent.com/91907661/183301047-b3610743-15a7-420b-9589-844978434ccd.png)
 
+<br>
+
 ### Sign Up:
 
 ![image](https://user-images.githubusercontent.com/91907661/183301174-616b0d28-12de-44e3-9727-15f44cbe5279.png)
+
+<br>
 
 ### Sign In:
 
 ![image](https://user-images.githubusercontent.com/91907661/183301094-2339cb7c-2844-474b-a9cd-fe39a55d668b.png)
 
+<br>
+
 ### Review Detail:
 
 ![image](https://user-images.githubusercontent.com/91907661/183302034-efbdb447-112d-4c3d-ba3b-98007f293856.png)
 
+<br>
+
 ### Create A Review:
 
 ![image](https://user-images.githubusercontent.com/91907661/183301376-c0cef37d-e0c9-4ce6-83bb-07d4cc67a445.png)
+
+<br>
 
 ### Edit and Delete Review:
 
@@ -293,11 +305,6 @@ JavaScript code was run through [JSHINT](https://jshint.com) javascript validato
 
 <br>
 
-## Accessibility
-[Wave Accessibility](https://wave.webaim.org/) tool was used throughout development and for final testing of the deployed website to check for any aid accessibility testing.
-
-<br>
-
 ## Responsiveness
 The html elements of this page have largely been constructed using Bootstrap. 
 - I have used Inspect option to go through reponsiveness of all pages:
@@ -314,11 +321,18 @@ The html elements of this page have largely been constructed using Bootstrap.
 ### **Bugs & Known Issues**
 - In the commit history there may appear to be some issues with my env.py file. I may have commited to early without having done this properly.
 - Again, with the env.py file, my database on Heroku became corrupted so I had to generate new a new Postges database key varaible
-- I was trying to use slugs in base.html
-- no lang attribute for html class. Has now been added with "en" value
-- some of the hr lines appear slighty thicker than other in places
+- I was trying to implement Edit and Delete Review function to be accessible from the nav bar, but could not get to work as hoped. Instead, these feature are accessible from review_detail.html which is accessed via clicking oin the the Review Title on view list on the Home page or Your Reviews page
+- No lang attribute for html class. This has now been added with "en" value
+- Some of the hr lines appear slighty thicker than other in places
 - Button inside anchor tags that needed to be changed to forms to be compliant
 - Submit Changes button won't go back to Your Reviews page, instead goes back to Home page
 - User has to be told to use br html tags to create paragraphs in create a review and edit review forms
+
+### **Future features and enchancements**
+- Users can see a preview of their post before hitting the Submit button
+- User will be able to submit their own photos instead of the one which appears as default
+- User can use a seach function which searches for strings (for game names, as example)
+- User can search for all reviews that are reviewed on a particular console (controlled by the drop down menu choices)
+- I wanted to implement the summernote panel on the front end, however, I tried several times to make the note panel repsonsive to screen width changes. Unfortunately, I had no more time to get this fixed and had to abandon the idea.
 
 <br>
