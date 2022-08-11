@@ -375,8 +375,7 @@ I would like to thank [Gareth McGirr](https://github.com/Gareth-McGirr) for goin
  
 ## Images
 PP4-Gamer.jpg was taken from [Pixabay](https://pixabay.com/photos/games-gaming-consoles-ps4-gamepad-2453777/)
- 
- 
+
 Masthead image taken from [Unsplash](https://unsplash.com/photos/npxXWgQ33ZQ)
  
 ## Code
