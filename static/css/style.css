@@ -87,7 +87,7 @@ i {
 }
 
 .card-text {
-    font-size: 18px;
+    font-size: 17px;
     color: black;
     font-family: Oswald, sans-serif;
 }
@@ -149,6 +149,22 @@ i {
     border-radius: 25px;
 }
 
+.vote-text {
+    font-size: 22px;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    text-align: center;
+    color: #143357;
+    background: linear-gradient(rgba(220, 225, 230, 0.774), transparent),
+                linear-gradient(to top left, rgb(230, 195, 155), transparent),
+                linear-gradient(to top right, rgb(133, 70, 60), transparent);
+    background-blend-mode: screen;
+    padding: 4px;
+    border-radius: 25px;
+}
+
 .console-text {
     font-size: 22px;
     color: #143357;
@@ -187,7 +203,7 @@ i {
 }
 
 .review-text {
-    font-weight: 600;
+    font-weight: 200;
     font-family: Oswald, sans-serif;
 }
 

@@ -5,6 +5,17 @@
 
 <div class="masthead">
     <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-md-6 offset-md-3 masthead-text">
+                <!-- Post title, game and subtitle goes in these h1 tags -->
+                <h1 class="review-title">{{ review.title }}</h1>
+                <hr>
+                <h2>{{ review.game }}</h2>
+                <h2>{{ review.subtitle }}</h2>
+                <!-- Post author goes before the | the post's created date goes after -->
+                <p class="review-subtitle">{{ review.gamer }} | {{ review.created_on }}</p>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -15,9 +26,11 @@
     <h2 class="posted-h2">Please edit your review using the form below:</h2>
     <hr>
 
-    <form class="btn-form" action="/" method="get">
-        <button class="btn-form-2">Back to Home</button>
-    </form>
+    <div>
+        <form class="btn-form" action="{% url 'posted_review' %}" method="get">
+            <button class="btn-form-2">Back to your Reviews</button>
+        </form>
+    </div>
     <hr>
     
     <div class="create-form">
@@ -27,8 +40,6 @@
                 {% if user.is_authenticated %}
 
                 <p>Reposting as Gamer: {{ user.username }}</p>
-                <h4>{{ review.title }}</h4>
-                <h4>{{ review.game }}</h4>
                 <hr>
 
                 <div class="format-text">In order to create paragraphs, please type the letters <strong>br </strong> 
@@ -47,24 +58,7 @@
     </div>
         
     {% endif %}
-
-    {% if is_paginated %}
-
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-            
-        </ul>
-    </nav>
-
-    {% endif %}
+    
 </div>
 
 {% endblock %}
