@@ -78,7 +78,7 @@ class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
         messages.success(
             self.request,
-            "Well done! You have successfully created a Game Review"
+            "Your Game Review has been sent to Admin for approval"
         )
 
         return super(CreateReview, self).form_valid(form)

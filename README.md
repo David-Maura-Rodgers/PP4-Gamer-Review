@@ -371,7 +371,7 @@ Please follow this link provided to access the site - [Gamer Review - Live Site]
 <br>
  
 # Credits
-I would like to say thank you to my fantastic mentor[Daisy McGirr](https://github.com/Daisy-McG), who gave great advice during our planning sessions. She has been a great mentor.
+I would like to say thank you to my fantastic mentor [Daisy McGirr](https://github.com/Daisy-McG), who gave great advice during our planning sessions. She has been a great mentor.
 
 I would also like to thank [Gareth McGirr](https://github.com/Gareth-McGirr) for going through a coding session with me in order to help with some of the structure and planning for the Edit and Delete functions of my site. His experience and insight was very helpful and very much appreciated.
  
