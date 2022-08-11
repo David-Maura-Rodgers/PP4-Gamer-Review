@@ -1,22 +1,26 @@
 {% extends "base.html" %} {% block content %}
 {% load crispy_forms_tags %}
 
+<!-- Masthead with review image -->
 <div class="masthead">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-md-6 offset-md-3 masthead-text">
-                <!-- Post title, game and subtitle goes in these h1 tags -->
+
+                <!-- Post title, game and subtitle display -->
                 <h1 class="review-title">{{ review.title }}</h1>
                 <hr>
                 <h2>{{ review.game }}</h2>
                 <h2>{{ review.subtitle }}</h2>
-                <!-- Post author goes before the | the post's created date goes after -->
+
+                <!-- Post author and the review created date-->
                 <p class="review-subtitle">{{ review.gamer }} | {{ review.created_on }}</p>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Check's that user is also the author of the review so they can access edit and delete functions -->
 {% if request.user == review.gamer %}
 
 <form class="btn-form" action="{% url 'edit_review' review.pk %}" method="get">
@@ -31,6 +35,7 @@
     <button class="btn-form-2">Back to Your Reviews</button>
 </form>
 
+<!-- If the above condition is not met, then the user will only have the option below -->
 {% else %}
 
 <form class="btn-form" action="/" method="get">
@@ -43,8 +48,9 @@
     <div class="card-row">
         <div class="review-content">
             <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
+
+                <!-- The review post content goes inside the card-text -->
+                <!-- The | safe filter is used inside the template tags -->
                 <div class="review-text">
                 <p class="card-text">
                     {{ review.content | safe }}
@@ -57,17 +63,26 @@
                 <div class="row">
                     <div class="col-2">
                         <strong>
+
+                            <!-- Checks that user is authenticated and can access the icons to upvote -->
                             {% if user.is_authenticated %}
+
+                            <!-- Like icon -->
                             <form class="d-inline" action="{% url 'review_like' review.pk %}" method="POST">
                                 {% csrf_token %}
+
                                 {% if liked %}
+
                                 <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like" 
                                 aria-label="vote like button" alt="vote like button">
                                     <i class="fas fa-thumbs-up"></i></button>
+
                                 {% else %}
+
                                 <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like" 
                                 aria-label="vote like button" alt="vote like button">
-                                    <i class="far fa-thumbs-up"></i></button>    
+                                    <i class="far fa-thumbs-up"></i></button>
+
                                 {% endif %}
                             </form>
 
@@ -77,23 +92,33 @@
 
                             {% endif %}
 
+                            <!-- displays total number of likes for a post -->
                             <span class="text-secondary">{{ review.number_of_likes }}</span>
                         </strong>
                     </div>
 
                     <div class="col-2">
                         <strong>
+
+                            <!-- Checks that user is authenticated and can access the icons to upvote -->
                             {% if user.is_authenticated %}
+
+                            <!-- funny icon -->
                             <form class="d-inline" action="{% url 'review_funny' review.pk %}" method="POST">
+
                                 {% csrf_token %}
                                 {% if funny %}
+
                                 <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like" 
                                 aria-label="vote like funny" alt="vote funny button">
                                     <i class="fa fa-smile-o"></i></button>
+
                                 {% else %}
+
                                 <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like" 
                                 aria-label="vote like funny" alt="vote funny button">
-                                    <i class="fa fa-smile-o"></i></button>    
+                                    <i class="fa fa-smile-o"></i></button>   
+
                                 {% endif %}
                             </form>
 
@@ -103,23 +128,33 @@
 
                             {% endif %}
 
+                            <!-- displays total number of funny votes for a post -->
                             <span class="text-secondary">{{ review.number_of_funny }}</span>
                         </strong>
                     </div>
 
                     <div class="col-2">
                         <strong>
+
+                            <!-- Checks that user is authenticated and can access the icons to upvote -->
                             {% if user.is_authenticated %}
+
+                            <!-- insightful icon -->
                             <form class="d-inline" action="{% url 'review_insightful' review.pk %}" method="POST">
+
                                 {% csrf_token %}
                                 {% if insightful %}
+
                                 <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like" 
                                 aria-label="vote insightful button" alt="vote insightful button">
                                     <i class="fa fa-lightbulb-o"></i></button>
+
                                 {% else %}
+    
                                 <button type="submit" name="blogpost_id" value="{{review.pk}}" class="btn-like" 
                                 aria-label="vote insightful button" alt="vote insightful button">
-                                    <i class="fa fa-lightbulb-o"></i></button>    
+                                    <i class="fa fa-lightbulb-o"></i></button> 
+
                                 {% endif %}
                             </form>
 
@@ -129,14 +164,17 @@
 
                             {% endif %}
 
+                            <!-- displays total number of insightful votes for a post -->
                             <span class="text-secondary">{{ review.number_of_insightful }}</span>
                         </strong>
                     </div>
 
                     <div class="col-2">
+
+                        <!-- counts for all comments made on this review post -->
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!--Total_comments variable goes before the closing strong tag -->
+                            <!--Total comments variable -->
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
@@ -145,35 +183,45 @@
         </div>
     </div>
 
+    <!-- Card to display comments that have been posted -->
     <div class="comments-row"> 
         <h3 class="h3-review">Comments:</h3>
         <div class="card-body-comments">
-            <!-- For loop inside the empty control tags to iterate through each comment in comments -->
+
+            <!-- For loop to iterate through each comment in comments -->
             {% for comment in comments %}
+
             <div class="comments" style="padding: 10px;">
                 <p class="font-weight-bold">
+
                     <!-- The commenter's name goes here -->
                     {{ comment.name }}
                     <span class=" text-muted font-weight-normal">
+
                         <!-- The comment's created date goes here -->
                         {{ comment.created_on }}
                     </span> wrote:
                 </p>
+
                 <!-- The body of the comment goes before the | -->
                 {{ comment.body | linebreaks }}
             </div>
+
             <!-- For loop ends here -->
             {% endfor %}
         </div>
         
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
+
+                <!-- if comment is submitted, user will be displayed the message as below -->
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting approval
                 </div>
                 {% else %}
                 
+                <!-- Else user can use this form to create a comment -->
                 {% if user.is_authenticated %}
 
                 <h3>Leave a comment:</h3>

@@ -1,14 +1,17 @@
 {% extends "base.html" %} {% block content %}
 
+<!-- Masthead with review image -->
 <div class="masthead">
     <div class="container h-100">
     </div>
 </div>
 
+<!-- Navigation button to take user back to Home page -->
 <form class="btn-form" action="/" method="get">
     <button class="btn-form-2">Back to Home</button>
 </form>
 
+<!-- pagination for users to go back and forth between pages in Your Review list -->
 <div class="pagination-top">
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
@@ -43,6 +46,7 @@
     <div class="col-12 mt-0 left">
         <div class="row">
 
+            <!-- for loop to display all User's Reviews and not other users -->
             {% for review in review_list %}
 
             <div class="col-md-6 offset-md-3">
@@ -52,6 +56,8 @@
                             <p class="gamer">Gamer: {{ review.gamer }}</p>
                         </div>
                     </div>
+
+                    <!-- Displays all relevant review info within the card -->
                     <h2 class="card-title">{{ review.title }}</h2>
                     <a href="{% url 'review_detail' review.pk review.title  %}" class="review-link">
                     <h2 class="card-title-black">{{ review.game }}</h2>
@@ -81,6 +87,7 @@
 
     {% if is_paginated %}
 
+    <!-- pagination for users to go back and forth between pages in User Reviews list -->
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
 

@@ -2,20 +2,22 @@
 
 {% block content %}
 
-<!-- Masthead with review iamge -->
+<!-- Masthead with review image -->
 <div class="masthead">
     <div class="container h-100">
     </div>
 </div>
 
 <div class="container-fluid-home">
+
+    <!-- Welcome introduction for users  -->
     <div class="welcome">
         <h3>WELCOME TO GAMER REVIEWS</h3>
         <div class="welcome-text">
             Welcome to Gamer Reviews. This is a site where games are reviewed by Gamers themselves.
-            Any game on any console can be reviewed. The aim of this site is to create a community 
-            of gamers who like to review and give their perspective on the games they are playing
-            at the moment. Friendly commenting and voting for likes, funny and Insightful posts
+            Any game on PS5, PS4, XBOX, NDS or PC can be reviewed. The aim of this site is to create 
+            a community of gamers who like to review and give their perspective on the games they are playing
+            at the moment. Friendly commenting and voting for likes, funny and insightful posts
             are also encouraged.
             <br>
             <br>
@@ -25,7 +27,8 @@
             We look forward to receiving your reviews!
         </div>
     </div>
-
+    
+    <!-- pagination for users to go back and forth between pages in Home page list -->
     <div class="pagination-top">
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
@@ -42,22 +45,26 @@
         </nav>
     </div>
 
-    <!-- Review Entries Column -->
+    <!-- Game Review Entries Column -->
     <div class="col-12 mt-0 left">
         <div class="row">
 
+            <!-- for loop to display all published Reviews -->
             {% for review in review_list %}
 
             <div class="col-md-6 offset-md-3">
                 <div class="card text-center">
                     <div class="card-body">
                         <div class="image-container">
+
+                            <!-- Standard Image provide by the site for review posts -->
                             <img class="card-img-top" src="static/images/PP4-Gamer.jpg" alt="game controllers">
                             <div class="image-flash">
                                 <p class="gamer">Gamer: {{ review.gamer }}</p>
                             </div>
                         </div>
                         
+                        <!-- Displays all relevant review info within the card -->
                         <h2 class="card-title">{{ review.title }}</h2>
                         <a href="{% url 'review_detail' review.pk review.title  %}" class="review-link">    
                         <h2 class="card-title-black">{{ review.game }}</h2>
@@ -92,6 +99,7 @@
 
     {% if is_paginated %}
 
+    <!-- pagination for users to go back and forth between pages in review list -->
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
 

@@ -11,21 +11,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@500&family=Poppins:wght@200;300&family=Roboto+Condensed:wght@300&display=swap"
     rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="keywords" content="gaming, gamers, PS4, XBOX, PS5, consoles, reviews, blog">
     <meta name="description" content="Gamer Reviews, Games Reviews By Gamers">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
 
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><span>GAMER REVIEWS</span></a>
@@ -33,12 +36,14 @@
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
 
+                    <!-- Check that User is authenticated to grant or deny access to certain options/functions -->
                     {% if user.is_authenticated %}
 
                     <li class="nav-item">
@@ -69,6 +74,7 @@
         </div>
     </nav>
 
+    <!-- Loop to display toast messages to user -->
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -84,11 +90,11 @@
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
-        <!-- Content Goes here -->
+        <!-- Main Content goes here -->
         {% endblock content %}
     </main>
 
-    <!-- Footer -->
+    <!-- Footer and Social Media Icons -->
     <footer class="footer mt-auto py-3 dark-bg">
         <div class="footer-text">Follow us:
             <a href="https://www.facebook.com" target="_blank" rel="noopener"
@@ -102,6 +108,7 @@
         </div>
     </footer>
 
+    <!-- Timeout Script for Toast messages -->
     <script>
         setTimeout(function () {
             let messages = document.getElementById('msg');
@@ -110,7 +117,7 @@
         }, 2500);
     </script>
 
-    <!-- font awesome script -->
+    <!-- Font Awesome script -->
     <script src="https://kit.fontawesome.com/45e8a89090.js" crossorigin="anonymous">
     </script>
 </body>

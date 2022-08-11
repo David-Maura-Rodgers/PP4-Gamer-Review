@@ -3,6 +3,7 @@
 
 {{ form.media }}
 
+<!-- Masthead with review image -->
 <div class="masthead">
     <div class="container h-100">
     </div>
@@ -12,6 +13,7 @@
     <h1 class="create-title">Please use the form below to create your own Review:</h1>
 </div>
 
+<!-- Nav button to get back to Home page -->
 <form class="btn-form" action="/" method="get">
     <button class="btn-form-2">Back to Home</button>
 </form>
@@ -21,6 +23,7 @@
         <div class="card-body">
             <div class="create-text">
 
+                <!-- Check that user is authticated user to Create a Review -->
                 {% if user.is_authenticated %}
 
                 <h3>Post your review using the form below:</h3>
@@ -29,7 +32,8 @@
                 <div class="format-text">In order to create paragraphs, please type the letters <strong>br </strong> 
                     within <strong>angle brackets</strong>
                 </div>
-            
+                
+                <!-- Create a Review Form -->
                 <p>Posting as Gamer: {{ user.username }}</p>
                 <form class="form-inner" method="post" enctype="multipart/form-data">
                     {{ form | crispy }}
