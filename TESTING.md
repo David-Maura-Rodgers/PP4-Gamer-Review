@@ -303,3 +303,23 @@ User should be able to click on all icon links in the footer as described in the
 Actual:
 
 User can click on icon links in the footer as described in the steps above and they work as intended
+
+<hr>
+<br>
+
+**Description:**
+
+**Site Pagination works as intended**
+
+Steps:
+1. Ensure site user is logged in
+2. Ensure there is more than 6 review posts on the home page and/or Your Reviews page
+3. Click on previous and next buttons that appear once the above condition is met
+
+Expected:
+
+User should be able to click on next button which appears if there are more than 6 review posts on a page. Similarly, user should be able to go back from that page to previous page with the back button
+
+Actual:
+
+User can click on both the next and previous buttons if there are more that 6 review posts on Home page or Your Reviews page

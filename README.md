@@ -187,7 +187,7 @@ I have set up whitenoise so that my static files are served in deployment. I hav
 <br>
 
 # WIREFRAMES:
-Below I will provide wireframes to illustrate how I thought each page would appear. These wireframe were created using [Figma](https://www.figma.com/)
+Below I will provide wireframes to illustrate how I thought each page would appear. These wireframes were created using [Figma](https://www.figma.com/)
 
 All pages will be fully responsive to all pixel sizes and the nav menu will become a burger icon for smaller resolutions
 
