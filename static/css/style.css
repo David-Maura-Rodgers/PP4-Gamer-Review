@@ -25,6 +25,10 @@ body {
     font-family: Oswald, sans-serif;
 }
 
+.pagination-top {
+    margin-top: 2%;
+}
+
 h2 {
     text-align: inherit;
 }
@@ -360,8 +364,8 @@ i {
         height: 30%;
         padding: 1%;
         margin-top: 0.85%;
-        }
     }
+}
 
 @media screen and (max-width: 576px) {
 
@@ -379,12 +383,12 @@ i {
 @media screen and (max-width: 320px) {
 
     .btn-form-2 {
-    color: #fff;
-    background-color: #047575;
-    border-radius: 25px;
-    width: 35%;
-    height: 35%;
-    padding: 1%;
-    margin-top: 0.85%;
+        color: #fff;
+        background-color: #047575;
+        border-radius: 25px;
+        width: 35%;
+        height: 35%;
+        padding: 1%;
+        margin-top: 0.85%;
     }
 }

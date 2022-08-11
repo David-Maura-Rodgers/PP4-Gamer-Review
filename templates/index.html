@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<!-- Masthead with review iamge -->
 <div class="masthead">
     <div class="container h-100">
     </div>
@@ -23,6 +24,22 @@
             <br>
             We look forward to receiving your reviews!
         </div>
+    </div>
+
+    <div class="pagination-top">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+    
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                {% endif %}
+    
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                {% endif %}
+                
+            </ul>
+        </nav>
     </div>
 
     <!-- Review Entries Column -->
