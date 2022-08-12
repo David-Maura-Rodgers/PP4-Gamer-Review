@@ -338,6 +338,7 @@ i {
     text-align: center;
 }
 
+/* https://stackoverflow.com/questions/57625331/changing-social-media-icon-color */
 .footer-text > a[href*="facebook"] {
     color: rgb(103, 22, 22);
 }

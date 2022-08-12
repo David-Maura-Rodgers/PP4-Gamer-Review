@@ -373,10 +373,8 @@ PP4-Gamer.jpg was taken from [Pixabay](https://pixabay.com/photos/games-gaming-c
 Masthead image taken from [Unsplash](https://unsplash.com/photos/npxXWgQ33ZQ)
  
 ## Code
-I used the Django Documentation as shown here [Generic editing views](https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-editing/). Following this documentation gave me the basis from which to build my Create, Edit and Delete views. 	1
+I used the Django Documentation as shown here [Generic editing views](https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-editing/). Following this documentation gave me the basis from which to build my Create, Edit and Delete views.
 
-CSS code for Masthead taken from [Start Bootstrap](https://startbootstrap.com/snippets/full-image-header)
- 
-CCS code for static Masthead image rendering taken from [Stack Overflow](https://stackoverflow.com/questions/57625331/changing-social-media-icon-color)
+CSS code for static Masthead image rendering taken from [Start Bootstrap](https://startbootstrap.com/snippets/full-image-header)
  
 CSS Code for social media icon colours: [Stack Overflow](https://stackoverflow.com/questions/57625331/changing-social-media-icon-color)
